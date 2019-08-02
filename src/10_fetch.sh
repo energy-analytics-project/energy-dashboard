@@ -1,4 +1,7 @@
 #! /bin/bash
+# -----------------------------------------------------------------------------
+# 10_fetch.sh : fetch resources (sqlite dbs)
+# -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
 # download() [URL] [DB] [OWNER}
@@ -31,4 +34,4 @@ download(){
 }
 
 # download URL
-download http://zwrob.com/assets/a.txt test.db "toddg<pub+github@zwrob.com>"
+download https://github.com/energy-analytics-project/data-oasis-as-req-dam/blob/master/db/caiso-oasis-as-req-dam.db caiso-oasis-as-req-dam.db "Todd Greenwood-Geer <pub+github@zwrob.com>"
