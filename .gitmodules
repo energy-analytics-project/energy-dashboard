@@ -1,0 +1,3 @@
+[submodule "data/data-oasis-as-req-dam"]
+	path = data/data-oasis-as-req-dam
+	url = https://github.com/energy-analytics-project/data-oasis-as-req-dam.git
