@@ -1,4 +1,8 @@
 APP_NAME=energy-dashboard
+repo="repo"
+owner="someone"
+owner="mycompany"
+email="myemail"
 
 .PHONY: all
 all: help
@@ -13,6 +17,8 @@ help:
 	# 	daily 	: fetch and save resources
 	# 	fetch	: fetch (curl/copy) resources to ./data
 	#	save	: save resources to backing store (git)
+	#	new	: create new datasource repo [args=name]
+	#		  e.g. make new repo="data-AAA-BBB-CCC" owner="Todd Greenwood-Geer" company="Enviro Software Solutions, LLC" email="pub+github@zwrob.com"
 	#
 	# Created by:
 	# Todd Greenwood-Geer <pub+github@zwrob.com>
@@ -32,3 +38,7 @@ fetch:
 .PHONY: save
 save:  
 	src/20_save.sh
+
+.PHONY: new
+new:  
+	src/create_data_source.sh "$(repo)" "$(owner)" "$(company)" "$(email)"
