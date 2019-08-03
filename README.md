@@ -14,8 +14,11 @@ For more, see: [background](./docs/background.md)
 
 ### Notebooks
 
-A quick proof of concept (POC) notebook to show how to get started:
-* [OASIS AS_REQ (DAM)](./notebooks/oasis-as-req-dam.ipynb)
+* A quick proof of concept (POC) notebook to show how to get started:
+  *  [OASIS AS_REQ (DAM)](./notebooks/oasis-as-req-dam.ipynb)
+* A second POC that shows how to read two different datasets and
+display them on the same graph:
+  * [OASIS AS_REQ (DAM) and FUEL_PRC](./notebooks/oasis-as-req-dam-and-fuel-prc.ipynb)
 
 ### How To Guide (getting started)
 
