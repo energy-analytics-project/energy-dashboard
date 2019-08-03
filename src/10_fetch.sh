@@ -34,4 +34,16 @@ download(){
 }
 
 # download URL
-download https://github.com/energy-analytics-project/data-oasis-as-req-dam/raw/master/db/caiso-oasis-as-req-dam.db caiso-oasis-as-req-dam.db "Todd Greenwood-Geer <pub+github@zwrob.com>"
+# currently using submodules for resources that are on github
+# add items here that cannot be included via submodules
+#download [SOME RESOURCE URL] [SOME DB NAME] "SOME USER NAME <USER@email.com>"
+
+
+# update the submodules
+git submodule update --recursive
+
+# fetch and save any new data 
+for m in $(ls data/data* -ad); do cd $m && make proc; done
+
+# update the submodules
+git submodule update --recursive

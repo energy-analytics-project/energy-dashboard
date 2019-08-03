@@ -1,3 +1,6 @@
 [submodule "data/data-oasis-as-req-dam"]
 	path = data/data-oasis-as-req-dam
 	url = https://github.com/energy-analytics-project/data-oasis-as-req-dam.git
+[submodule "data/data-oasis-prc-fuel-all"]
+	path = data/data-oasis-prc-fuel-all
+	url = https://github.com/energy-analytics-project/data-oasis-prc-fuel-all.git
