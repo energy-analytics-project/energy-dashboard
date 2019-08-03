@@ -43,7 +43,7 @@ download(){
 git submodule update --recursive
 
 # fetch and save any new data 
-for m in $(ls data/data* -ad); do cd $m && make proc; done
+for m in $(ls data/data* -ad); do pushd $m && make proc && popd; done
 
 # update the submodules
 git submodule update --recursive
