@@ -9,3 +9,6 @@ rel/example_project
 .concrete/DEV_MODE
 .rebar
 notebooks/.ipynb_checkpoints
+.temp-data-source-template/
+data-AAA-BBB-CCC/
+
