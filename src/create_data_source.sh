@@ -34,7 +34,7 @@ mkdir -p ${FQPATH_REPO}
 (cd ${TEMP_REPO} && git archive --format=tar HEAD | (cd ${FQPATH_REPO} && tar xfp -))
 
 echo "updating template vars: $REPO"
-array=(LICENSE Makefile README.md src/10_down.py src/20_unzp.py src/30_inse.py src/40_save.sh)
+array=(LICENSE Makefile README.md src/10_down.py src/20_unzp.py src/30_inse.py src/40_save.sh manifest.json)
 
 for item in ${array[*]}
 do
