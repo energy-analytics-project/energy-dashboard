@@ -1,0 +1,8 @@
+{
+    "name":           "data-oasis-ene-loss-dam",
+    "description":    "CAISO OASIS ENE_LOSS DAM",
+    "maintainer":     "Todd Greenwood-Geer",
+    "company":        "Enviro Software Solutions, LLC",
+    "email":          "pub+github@zwrob.com",
+    "repo":           "https://github.com/energy-analytics-project/data-oasis-ene-loss-dam.git"
+}
