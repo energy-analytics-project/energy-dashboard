@@ -18,11 +18,15 @@ help:
 	# 	fetch	: fetch (curl/copy) resources to ./data
 	#	save	: save resources to backing store (git)
 	#	new	: create new datasource repo [args=name]
-	#		  e.g. make new repo="data-AAA-BBB-CCC" owner="Todd Greenwood-Geer" company="Enviro Software Solutions, LLC" email="pub+github@zwrob.com"
 	#
-	# Created by:
-	# Todd Greenwood-Geer <pub+github@zwrob.com>
-	# Enviro Software Solutions, LLC
+	#		  Example:
+	#
+	#		  $ make new 				\
+	#		  	repo="data-aaa-bbb-ccc" 	\
+	#		  	owner="Your Name" 		\
+	#		  	company="Your Company" 		\
+	#		  	email="Your Email Address"
+	#
 	# -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
@@ -45,4 +49,4 @@ new:
 
 .PHONY: test
 test:  
-	make new repo="data-AAA-BBB-CCC" owner="Todd Greenwood-Geer" company="Enviro Software Solutions, LLC" email="pub+github@zwrob.com"
+	make new repo="data-aaa-bbb-ccc" owner="bilbo baggins" company="the shire, inc" email="penguins@wizards.com"
