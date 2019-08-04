@@ -4,3 +4,6 @@
 [submodule "data/data-oasis-prc-fuel-all"]
 	path = data/data-oasis-prc-fuel-all
 	url = https://github.com/energy-analytics-project/data-oasis-prc-fuel-all.git
+[submodule "data/data-oasis-ene-wind-solar-summary"]
+	path = data/data-oasis-ene-wind-solar-summary
+	url = git@github.com:energy-analytics-project/data-oasis-ene-wind-solar-summary.git
