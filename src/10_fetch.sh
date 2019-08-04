@@ -40,10 +40,8 @@ download(){
 
 
 # update the submodules
-git submodule update --recursive
+# this screws things up... revisit if ever anyone else is updating this stuff
+#git submodule update --recursive
 
-# fetch and save any new data 
-for m in $(ls data/data* -ad); do pushd $m && make proc && popd; done
-
-# update the submodules
-git submodule update --recursive
+# fetch and save any new data in each submodule
+git submodule foreach make proc
