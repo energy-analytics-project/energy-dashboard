@@ -23,7 +23,8 @@ echo "  EMAIL=${EMAIL}"
 echo "----------------------------------------------------"
 
 if [ -e ${TEMP_REPO} ]; then
-    echo "skipping download. remove ${TEMP_REPO} dir if you want to download a fresh template repo"
+    echo "updating existing template repo in: $TEMP_REPO"
+    (cd ${TEMP_REPO} && git pull)
 else
     echo "downloading template repo to: $TEMP_REPO"
     git clone https://github.com/energy-analytics-project/data-source-template.git ${TEMP_REPO}
