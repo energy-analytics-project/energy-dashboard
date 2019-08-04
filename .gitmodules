@@ -7,3 +7,6 @@
 [submodule "data/data-oasis-ene-wind-solar-summary"]
 	path = data/data-oasis-ene-wind-solar-summary
 	url = git@github.com:energy-analytics-project/data-oasis-ene-wind-solar-summary.git
+[submodule "data/data-oasis-ene-loss-dam"]
+	path = data/data-oasis-ene-loss-dam
+	url = https://github.com/energy-analytics-project/data-oasis-ene-loss-dam.git
