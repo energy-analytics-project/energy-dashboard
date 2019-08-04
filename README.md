@@ -28,6 +28,8 @@ all standardized on...
 1. Jupyter Notebooks as the analytics platform
 1. Github.com as the backing store
 
+Note: this project uses submodules (for now).
+
 ### Notebooks
 
 Here are some quick proof of concept (POC) notebooks to show how to get
