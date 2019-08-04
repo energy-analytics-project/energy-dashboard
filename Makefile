@@ -42,3 +42,7 @@ save:
 .PHONY: new
 new:  
 	src/create_data_source.sh "$(repo)" "$(owner)" "$(company)" "$(email)"
+
+.PHONY: test
+test:  
+	make new repo="data-AAA-BBB-CCC" owner="Todd Greenwood-Geer" company="Enviro Software Solutions, LLC" email="pub+github@zwrob.com"
