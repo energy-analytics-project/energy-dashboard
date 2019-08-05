@@ -3,6 +3,7 @@ repo="repo"
 owner="someone"
 owner="mycompany"
 email="myemail"
+url="todo"
 
 .PHONY: all
 all: help
@@ -45,8 +46,8 @@ save:
 
 .PHONY: new
 new:  
-	src/create_data_source.sh "$(repo)" "$(owner)" "$(company)" "$(email)"
+	src/create_data_source.sh "$(repo)" "$(owner)" "$(company)" "$(email)" "$(url)"
 
 .PHONY: test
 test:  
-	make new repo="data-aaa-bbb-ccc" owner="bilbo baggins" company="the shire, inc" email="penguins@wizards.com"
+	make new repo="data-aaa-bbb-ccc" owner="bilbo baggins" company="the shire, inc" email="penguins@wizards.com" url="http://onaroadtonowhere.com"

@@ -1,18 +1,273 @@
+[submodule "data/data-oasis-as-mileage-calc-all"]
+      path = data/data-oasis-as-mileage-calc-all
+      url = https://github.com/energy-analytics-project/data-oasis-as-mileage-calc-all.git
+[submodule "data/data-oasis-as-op-rsrv"]
+      path = data/data-oasis-as-op-rsrv
+      url = https://github.com/energy-analytics-project/data-oasis-as-op-rsrv.git
 [submodule "data/data-oasis-as-req-dam"]
-	path = data/data-oasis-as-req-dam
-	url = https://github.com/energy-analytics-project/data-oasis-as-req-dam.git
-[submodule "data/data-oasis-prc-fuel-all"]
-	path = data/data-oasis-prc-fuel-all
-	url = https://github.com/energy-analytics-project/data-oasis-prc-fuel-all.git
-[submodule "data/data-oasis-ene-wind-solar-summary"]
-	path = data/data-oasis-ene-wind-solar-summary
-	url = git@github.com:energy-analytics-project/data-oasis-ene-wind-solar-summary.git
+      path = data/data-oasis-as-req-dam
+      url = https://github.com/energy-analytics-project/data-oasis-as-req-dam.git
+[submodule "data/data-oasis-as-results-dam"]
+      path = data/data-oasis-as-results-dam
+      url = https://github.com/energy-analytics-project/data-oasis-as-results-dam.git
+[submodule "data/data-oasis-atl-apnode-all"]
+      path = data/data-oasis-atl-apnode-all
+      url = https://github.com/energy-analytics-project/data-oasis-atl-apnode-all.git
+[submodule "data/data-oasis-atl-baa-tie"]
+      path = data/data-oasis-atl-baa-tie
+      url = https://github.com/energy-analytics-project/data-oasis-atl-baa-tie.git
+[submodule "data/data-oasis-atl-cbnode"]
+      path = data/data-oasis-atl-cbnode
+      url = https://github.com/energy-analytics-project/data-oasis-atl-cbnode.git
+[submodule "data/data-oasis-atl-gen-cap-lst"]
+      path = data/data-oasis-atl-gen-cap-lst
+      url = https://github.com/energy-analytics-project/data-oasis-atl-gen-cap-lst.git
+[submodule "data/data-oasis-atl-hub"]
+      path = data/data-oasis-atl-hub
+      url = https://github.com/energy-analytics-project/data-oasis-atl-hub.git
+[submodule "data/data-oasis-atl-itc-sp"]
+      path = data/data-oasis-atl-itc-sp
+      url = https://github.com/energy-analytics-project/data-oasis-atl-itc-sp.git
+[submodule "data/data-oasis-atl-lap-all"]
+      path = data/data-oasis-atl-lap-all
+      url = https://github.com/energy-analytics-project/data-oasis-atl-lap-all.git
+[submodule "data/data-oasis-atl-osm-all"]
+      path = data/data-oasis-atl-osm-all
+      url = https://github.com/energy-analytics-project/data-oasis-atl-osm-all.git
+[submodule "data/data-oasis-atl-peak-on-off"]
+      path = data/data-oasis-atl-peak-on-off
+      url = https://github.com/energy-analytics-project/data-oasis-atl-peak-on-off.git
+[submodule "data/data-oasis-atl-pub-dam"]
+      path = data/data-oasis-atl-pub-dam
+      url = https://github.com/energy-analytics-project/data-oasis-atl-pub-dam.git
+[submodule "data/data-oasis-atl-pub-sched"]
+      path = data/data-oasis-atl-pub-sched
+      url = https://github.com/energy-analytics-project/data-oasis-atl-pub-sched.git
+[submodule "data/data-oasis-atl-ruc-zone-map"]
+      path = data/data-oasis-atl-ruc-zone-map
+      url = https://github.com/energy-analytics-project/data-oasis-atl-ruc-zone-map.git
+[submodule "data/data-oasis-atl-sp"]
+      path = data/data-oasis-atl-sp
+      url = https://github.com/energy-analytics-project/data-oasis-atl-sp.git
+[submodule "data/data-oasis-atl-sp-tie"]
+      path = data/data-oasis-atl-sp-tie
+      url = https://github.com/energy-analytics-project/data-oasis-atl-sp-tie.git
+[submodule "data/data-oasis-atl-tac-area-map"]
+      path = data/data-oasis-atl-tac-area-map
+      url = https://github.com/energy-analytics-project/data-oasis-atl-tac-area-map.git
+[submodule "data/data-oasis-atl-ti-all-all"]
+      path = data/data-oasis-atl-ti-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-atl-ti-all-all.git
+[submodule "data/data-oasis-atl-tiepoint"]
+      path = data/data-oasis-atl-tiepoint
+      url = https://github.com/energy-analytics-project/data-oasis-atl-tiepoint.git
+[submodule "data/data-oasis-cbd-nodal-grp-cnstr-prc"]
+      path = data/data-oasis-cbd-nodal-grp-cnstr-prc
+      url = https://github.com/energy-analytics-project/data-oasis-cbd-nodal-grp-cnstr-prc.git
+[submodule "data/data-oasis-cmmt-ra-mlc-dam"]
+      path = data/data-oasis-cmmt-ra-mlc-dam
+      url = https://github.com/energy-analytics-project/data-oasis-cmmt-ra-mlc-dam.git
+[submodule "data/data-oasis-cmmt-rmr-dam"]
+      path = data/data-oasis-cmmt-rmr-dam
+      url = https://github.com/energy-analytics-project/data-oasis-cmmt-rmr-dam.git
+[submodule "data/data-oasis-crr-clearing-all-all"]
+      path = data/data-oasis-crr-clearing-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-crr-clearing-all-all.git
+[submodule "data/data-oasis-ene-aggr-flex-ramp-rtd"]
+      path = data/data-oasis-ene-aggr-flex-ramp-rtd
+      url = https://github.com/energy-analytics-project/data-oasis-ene-aggr-flex-ramp-rtd.git
+[submodule "data/data-oasis-ene-baa-mkt-events-rtd-all"]
+      path = data/data-oasis-ene-baa-mkt-events-rtd-all
+      url = https://github.com/energy-analytics-project/data-oasis-ene-baa-mkt-events-rtd-all.git
+[submodule "data/data-oasis-ene-base-nsi-dam"]
+      path = data/data-oasis-ene-base-nsi-dam
+      url = https://github.com/energy-analytics-project/data-oasis-ene-base-nsi-dam.git
+[submodule "data/data-oasis-ene-cb-mkt-sum"]
+      path = data/data-oasis-ene-cb-mkt-sum
+      url = https://github.com/energy-analytics-project/data-oasis-ene-cb-mkt-sum.git
+[submodule "data/data-oasis-ene-cd-slrs-rtm"]
+      path = data/data-oasis-ene-cd-slrs-rtm
+      url = https://github.com/energy-analytics-project/data-oasis-ene-cd-slrs-rtm.git
+[submodule "data/data-oasis-ene-disp"]
+      path = data/data-oasis-ene-disp
+      url = https://github.com/energy-analytics-project/data-oasis-ene-disp.git
+[submodule "data/data-oasis-ene-ea-all-all"]
+      path = data/data-oasis-ene-ea-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-ene-ea-all-all.git
+[submodule "data/data-oasis-ene-eim-dyn-nsi-all-all"]
+      path = data/data-oasis-ene-eim-dyn-nsi-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-ene-eim-dyn-nsi-all-all.git
+[submodule "data/data-oasis-ene-eim-flex-ramp-input-rtm"]
+      path = data/data-oasis-ene-eim-flex-ramp-input-rtm
+      url = https://github.com/energy-analytics-project/data-oasis-ene-eim-flex-ramp-input-rtm.git
+[submodule "data/data-oasis-ene-eim-transfer-all-all"]
+      path = data/data-oasis-ene-eim-transfer-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-ene-eim-transfer-all-all.git
+[submodule "data/data-oasis-ene-eim-transfer-limit-all-all"]
+      path = data/data-oasis-ene-eim-transfer-limit-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-ene-eim-transfer-limit-all-all.git
+[submodule "data/data-oasis-ene-eim-transfer-limits-tie-rtd-all"]
+      path = data/data-oasis-ene-eim-transfer-limits-tie-rtd-all
+      url = https://github.com/energy-analytics-project/data-oasis-ene-eim-transfer-limits-tie-rtd-all.git
+[submodule "data/data-oasis-ene-eim-transfer-tie-all-all"]
+      path = data/data-oasis-ene-eim-transfer-tie-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-ene-eim-transfer-tie-all-all.git
+[submodule "data/data-oasis-ene-flex-ramp-dc-rtd-all"]
+      path = data/data-oasis-ene-flex-ramp-dc-rtd-all
+      url = https://github.com/energy-analytics-project/data-oasis-ene-flex-ramp-dc-rtd-all.git
+[submodule "data/data-oasis-ene-hrly-base-loss-dam-all"]
+      path = data/data-oasis-ene-hrly-base-loss-dam-all
+      url = https://github.com/energy-analytics-project/data-oasis-ene-hrly-base-loss-dam-all.git
 [submodule "data/data-oasis-ene-loss-dam"]
-	path = data/data-oasis-ene-loss-dam
-	url = https://github.com/energy-analytics-project/data-oasis-ene-loss-dam.git
-[submodule "data/data-oasis-sld-ren-fcst-dam"]
-	path = data/data-oasis-sld-ren-fcst-dam
-	url = https://github.com/energy-analytics-project/data-oasis-sld-ren-fcst-dam.git
+      path = data/data-oasis-ene-loss-dam
+      url = https://github.com/energy-analytics-project/data-oasis-ene-loss-dam.git
+[submodule "data/data-oasis-ene-mpm-dam"]
+      path = data/data-oasis-ene-mpm-dam
+      url = https://github.com/energy-analytics-project/data-oasis-ene-mpm-dam.git
+[submodule "data/data-oasis-ene-slrs-dam"]
+      path = data/data-oasis-ene-slrs-dam
+      url = https://github.com/energy-analytics-project/data-oasis-ene-slrs-dam.git
+[submodule "data/data-oasis-ene-uncertainty-mv-rtd"]
+      path = data/data-oasis-ene-uncertainty-mv-rtd
+      url = https://github.com/energy-analytics-project/data-oasis-ene-uncertainty-mv-rtd.git
+[submodule "data/data-oasis-ene-wind-solar-summary"]
+      path = data/data-oasis-ene-wind-solar-summary
+      url = https://github.com/energy-analytics-project/data-oasis-ene-wind-solar-summary.git
+[submodule "data/data-oasis-prc-cd-intvl-lmp"]
+      path = data/data-oasis-prc-cd-intvl-lmp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-cd-intvl-lmp.git
+[submodule "data/data-oasis-prc-cd-rtm-flowgate-rtm"]
+      path = data/data-oasis-prc-cd-rtm-flowgate-rtm
+      url = https://github.com/energy-analytics-project/data-oasis-prc-cd-rtm-flowgate-rtm.git
+[submodule "data/data-oasis-prc-cd-rtm-nomogram-rctm-all"]
+      path = data/data-oasis-prc-cd-rtm-nomogram-rctm-all
+      url = https://github.com/energy-analytics-project/data-oasis-prc-cd-rtm-nomogram-rctm-all.git
+[submodule "data/data-oasis-prc-cd-sptie-lmp"]
+      path = data/data-oasis-prc-cd-sptie-lmp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-cd-sptie-lmp.git
+[submodule "data/data-oasis-prc-cnstr-dam"]
+      path = data/data-oasis-prc-cnstr-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-cnstr-dam.git
+[submodule "data/data-oasis-prc-curr-hub-lmp"]
+      path = data/data-oasis-prc-curr-hub-lmp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-curr-hub-lmp.git
+[submodule "data/data-oasis-prc-curr-lmp-all"]
+      path = data/data-oasis-prc-curr-lmp-all
+      url = https://github.com/energy-analytics-project/data-oasis-prc-curr-lmp-all.git
+[submodule "data/data-oasis-prc-dam-sch-cnstr-dam"]
+      path = data/data-oasis-prc-dam-sch-cnstr-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-dam-sch-cnstr-dam.git
+[submodule "data/data-oasis-prc-ds-ref"]
+      path = data/data-oasis-prc-ds-ref
+      url = https://github.com/energy-analytics-project/data-oasis-prc-ds-ref.git
+[submodule "data/data-oasis-prc-eim-gh-rtd"]
+      path = data/data-oasis-prc-eim-gh-rtd
+      url = https://github.com/energy-analytics-project/data-oasis-prc-eim-gh-rtd.git
+[submodule "data/data-oasis-prc-flex-ramp-dam"]
+      path = data/data-oasis-prc-flex-ramp-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-flex-ramp-dam.git
+[submodule "data/data-oasis-prc-fuel-all"]
+      path = data/data-oasis-prc-fuel-all
+      url = https://github.com/energy-analytics-project/data-oasis-prc-fuel-all.git
+[submodule "data/data-oasis-prc-ghg-allowance"]
+      path = data/data-oasis-prc-ghg-allowance
+      url = https://github.com/energy-analytics-project/data-oasis-prc-ghg-allowance.git
+[submodule "data/data-oasis-prc-hasp-lmp"]
+      path = data/data-oasis-prc-hasp-lmp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-hasp-lmp.git
+[submodule "data/data-oasis-prc-intvl-as-rtm"]
+      path = data/data-oasis-prc-intvl-as-rtm
+      url = https://github.com/energy-analytics-project/data-oasis-prc-intvl-as-rtm.git
+[submodule "data/data-oasis-prc-intvl-lmp"]
+      path = data/data-oasis-prc-intvl-lmp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-intvl-lmp.git
+[submodule "data/data-oasis-prc-lmp"]
+      path = data/data-oasis-prc-lmp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-lmp.git
+[submodule "data/data-oasis-prc-mpm-cnstr-cmp-dam"]
+      path = data/data-oasis-prc-mpm-cnstr-cmp-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-cnstr-cmp-dam.git
+[submodule "data/data-oasis-prc-mpm-cnstr-dam"]
+      path = data/data-oasis-prc-mpm-cnstr-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-cnstr-dam.git
+[submodule "data/data-oasis-prc-mpm-default-cmp-dam"]
+      path = data/data-oasis-prc-mpm-default-cmp-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-default-cmp-dam.git
+[submodule "data/data-oasis-prc-mpm-lmp-dam"]
+      path = data/data-oasis-prc-mpm-lmp-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-lmp-dam.git
+[submodule "data/data-oasis-prc-mpm-nomogram-cmp-dam"]
+      path = data/data-oasis-prc-mpm-nomogram-cmp-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-nomogram-cmp-dam.git
+[submodule "data/data-oasis-prc-mpm-nomogram-dam"]
+      path = data/data-oasis-prc-mpm-nomogram-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-nomogram-dam.git
+[submodule "data/data-oasis-prc-mpm-ref-dam"]
+      path = data/data-oasis-prc-mpm-ref-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-ref-dam.git
+[submodule "data/data-oasis-prc-mpm-rtm-flowgate-hasp-all"]
+      path = data/data-oasis-prc-mpm-rtm-flowgate-hasp-all
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-rtm-flowgate-hasp-all.git
+[submodule "data/data-oasis-prc-mpm-rtm-lmp-hasp-all"]
+      path = data/data-oasis-prc-mpm-rtm-lmp-hasp-all
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-rtm-lmp-hasp-all.git
+[submodule "data/data-oasis-prc-mpm-rtm-nomogram-cmp-hasp"]
+      path = data/data-oasis-prc-mpm-rtm-nomogram-cmp-hasp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-rtm-nomogram-cmp-hasp.git
+[submodule "data/data-oasis-prc-mpm-rtm-nomogram-hasp"]
+      path = data/data-oasis-prc-mpm-rtm-nomogram-hasp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-rtm-nomogram-hasp.git
+[submodule "data/data-oasis-prc-mpm-rtm-ref-bus-hasp"]
+      path = data/data-oasis-prc-mpm-rtm-ref-bus-hasp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-mpm-rtm-ref-bus-hasp.git
+[submodule "data/data-oasis-prc-nomogram-dam"]
+      path = data/data-oasis-prc-nomogram-dam
+      url = https://github.com/energy-analytics-project/data-oasis-prc-nomogram-dam.git
+[submodule "data/data-oasis-prc-rtm-flowgate-rtm"]
+      path = data/data-oasis-prc-rtm-flowgate-rtm
+      url = https://github.com/energy-analytics-project/data-oasis-prc-rtm-flowgate-rtm.git
+[submodule "data/data-oasis-prc-rtm-lap"]
+      path = data/data-oasis-prc-rtm-lap
+      url = https://github.com/energy-analytics-project/data-oasis-prc-rtm-lap.git
+[submodule "data/data-oasis-prc-rtm-nomogram-rtm"]
+      path = data/data-oasis-prc-rtm-nomogram-rtm
+      url = https://github.com/energy-analytics-project/data-oasis-prc-rtm-nomogram-rtm.git
+[submodule "data/data-oasis-prc-rtm-sch-cnstr-rtd"]
+      path = data/data-oasis-prc-rtm-sch-cnstr-rtd
+      url = https://github.com/energy-analytics-project/data-oasis-prc-rtm-sch-cnstr-rtd.git
+[submodule "data/data-oasis-prc-rtpd-lmp"]
+      path = data/data-oasis-prc-rtpd-lmp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-rtpd-lmp.git
+[submodule "data/data-oasis-prc-sptie-lmp"]
+      path = data/data-oasis-prc-sptie-lmp
+      url = https://github.com/energy-analytics-project/data-oasis-prc-sptie-lmp.git
+[submodule "data/data-oasis-sld-adv-fcst-rtd"]
+      path = data/data-oasis-sld-adv-fcst-rtd
+      url = https://github.com/energy-analytics-project/data-oasis-sld-adv-fcst-rtd.git
+[submodule "data/data-oasis-sld-fcst-actual"]
+      path = data/data-oasis-sld-fcst-actual
+      url = https://github.com/energy-analytics-project/data-oasis-sld-fcst-actual.git
+[submodule "data/data-oasis-sld-fcst-dam"]
+      path = data/data-oasis-sld-fcst-dam
+      url = https://github.com/energy-analytics-project/data-oasis-sld-fcst-dam.git
 [submodule "data/data-oasis-sld-fcst-peak"]
-	path = data/data-oasis-sld-fcst-peak
-	url = https://github.com/energy-analytics-project/data-oasis-sld-fcst-peak.git
+      path = data/data-oasis-sld-fcst-peak
+      url = https://github.com/energy-analytics-project/data-oasis-sld-fcst-peak.git
+[submodule "data/data-oasis-sld-ren-fcst-dam"]
+      path = data/data-oasis-sld-ren-fcst-dam
+      url = https://github.com/energy-analytics-project/data-oasis-sld-ren-fcst-dam.git
+[submodule "data/data-oasis-sld-sf-eval-dmd-fcst"]
+      path = data/data-oasis-sld-sf-eval-dmd-fcst
+      url = https://github.com/energy-analytics-project/data-oasis-sld-sf-eval-dmd-fcst.git
+[submodule "data/data-oasis-trns-atc-dam-all"]
+      path = data/data-oasis-trns-atc-dam-all
+      url = https://github.com/energy-analytics-project/data-oasis-trns-atc-dam-all.git
+[submodule "data/data-oasis-trns-curr-usage-all-all"]
+      path = data/data-oasis-trns-curr-usage-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-trns-curr-usage-all-all.git
+[submodule "data/data-oasis-trns-outage-all-all"]
+      path = data/data-oasis-trns-outage-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-trns-outage-all-all.git
+[submodule "data/data-oasis-trns-usage-dam-all-all"]
+      path = data/data-oasis-trns-usage-dam-all-all
+      url = https://github.com/energy-analytics-project/data-oasis-trns-usage-dam-all-all.git

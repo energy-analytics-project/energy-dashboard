@@ -8,6 +8,7 @@ export DATA_SOURCE_NAME=${REPO}
 export OWNER=${2:-owner}
 export COMPANY=${3:-company}
 export EMAIL=${4:-email}
+export DATA_SOURCE_URL=${5:-http://TODO}
 
 echo "----------------------------------------------------"
 echo "Usage: REPO OWNER COMPANY EMAIL"
@@ -20,6 +21,7 @@ echo "  DATA_SOURCE_NAME=${DATA_SOURCE_NAME}"
 echo "  OWNER=${OWNER}"
 echo "  COMPANY=${COMPANY}"
 echo "  EMAIL=${EMAIL}"
+echo "  DATA_SOURCE_URL=${DATA_SOURCE_URL}"
 echo "----------------------------------------------------"
 
 if [ -e ${TEMP_REPO} ]; then
@@ -45,12 +47,15 @@ done
 
 pushd ${REPO}
 git init
+git lfs install
+git lfs track "zip/*.zip"
+git lfs track "db/*.db"
 git add *
 git commit -m "initial commit" -m "auto-generated via create_data_source.sh"
 popd
 
 echo "created data source repo at: ${REPO}"
-echo "TODO: update the RESOURCE_URL and any processing details in src/..."
+echo "TODO: verify that the RESOURCE_URL is correct and fix any processing details in src/..."
 echo "TODO: git remote add origin [path to your blank repository]"
 echo "TODO: git commit"
 echo "TODO: git push"
