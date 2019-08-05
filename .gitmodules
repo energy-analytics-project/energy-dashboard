@@ -10,3 +10,6 @@
 [submodule "data/data-oasis-ene-loss-dam"]
 	path = data/data-oasis-ene-loss-dam
 	url = https://github.com/energy-analytics-project/data-oasis-ene-loss-dam.git
+[submodule "data/data-oasis-sld-ren-fcst-dam"]
+	path = data/data-oasis-sld-ren-fcst-dam
+	url = https://github.com/energy-analytics-project/data-oasis-sld-ren-fcst-dam.git
