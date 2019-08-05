@@ -13,3 +13,6 @@
 [submodule "data/data-oasis-sld-ren-fcst-dam"]
 	path = data/data-oasis-sld-ren-fcst-dam
 	url = https://github.com/energy-analytics-project/data-oasis-sld-ren-fcst-dam.git
+[submodule "data/data-oasis-sld-fcst-peak"]
+	path = data/data-oasis-sld-fcst-peak
+	url = https://github.com/energy-analytics-project/data-oasis-sld-fcst-peak.git
