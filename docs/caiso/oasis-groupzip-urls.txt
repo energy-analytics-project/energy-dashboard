@@ -1,0 +1,80 @@
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_LMP_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_LMP_GRP&startdatetime=20190701T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_LMP_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_RTM_GRP&startdatetime=20130919T07:00-0000&version=1(forRTM)
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_RTM_GRP&startdatetime=20160919T07:00-0000&version=2(forRTM)
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_DAM_GRP&startdatetime=20130919T07:00-0000&version=1(forDAM)
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CB_DAM_GRP&startdatetime=20130919T07:00-0000&version=1(forDAM)PUB_CRR_BID
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CB_DAM_GRP&startdatetime=20130919T07:00-0000&version=2(forDAM)
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CRR_BID_SEASONAL_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CRR_BID_MONTHLY_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CRR_BID_SEASONAL_GRP&startdatetime=20180919T07:00-0000&version=2
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CRR_BID_MONTHLY_GRP&startdatetime=20180919T07:00-0000&version=2
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CSP_OFFER_SET_ANNUAL_GRP&startdatetime=20170101T08:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CSP_OFFER_SET_MONTHLY_GRP&startdatetime=20170102T08:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CSP_OFFER_SET_INTRAMONTHLY_GRP&startdatetime=20170110T08:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_LMP_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_SPTIE_LMP_GRP&startdatetime=20130919T07:00-0000&version=3OR
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_SPTIE_LMP_GRP&startdatetime=20160919T07:00-0000&version=4OR
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_SPTIE_LMP_GRP&startdatetime=20160919T07:00-0000&version=5
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RUC_LMP_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=1OR
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=3Note:Version3responsezipfilewillincludeseparatefileforeachprice
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=1OR
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=3Note:Version3responsezipfilewillincludeseparatefileforeachprice
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_SPTIE_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=3OR
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_SPTIE_LMP_GRP&startdatetime=20160919T07:00-0000&enddatetime=20160919T08:00-0000&version=4OR
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_SPTIE_LMP_GRP&startdatetime=20160919T07:00-0000&enddatetime=20160919T08:00-0000&version=5Note:Version5responsezipfilewillincludeseparatefileforeachprice
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTM_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=1OR
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTM_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=3
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTD_SPTIE_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=3OR
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTD_SPTIE_LMP_GRP&startdatetime=20160919T07:00-0000&enddatetime=20160919T08:00-0000&version=4OR
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTD_SPTIE_LMP_GRP&startdatetime=20160919T07:00-0000&enddatetime=20160919T08:00-0000&version=5Note:Version5responsezipfilewillincludeseparatefileforeachprice
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_PRC_AS_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP_PRC_AS_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTM_PRC_AS_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_TRNS_GRP&startdatetime=2013091 9T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP_TRNS_GRP&startdatetime=201309 19T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_TRNS_GRP&startdatetime=201309 19T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM1_GRP&startdatetime=20130919T07: 00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTM1_GRP&startdatetime=20130919T07: 00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_FCST_GRP&startdatetime=20130919T07:00-0000&version=1HASP1_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP1_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=POST1_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_AS_GRP&startdatetime=20130919T 07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP_AS_GRP&startdatetime=20130919 T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTM_AS_GRP&startdatetime=20130919T 07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_DAM_GRP&startdatetime=20130919 T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_RTM_GRP&startdatetime=20130919 T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=CURR_LMP_GRP&startdatetime=20130919T07:00-0000&version=1DAM_SD_PRC_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_SD_PRC_GRP&startdatetime=20130919T07:00-0000&version=1HASP_SD_PRC_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP_SD_PRC_GRP&startdatetime=20130919T07:00-0000&version=1InterfaceSpecificationforOASIS
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTM_SD_PRC_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CB_DAM_GRP&startdatetime=20130
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=CB_REF_PRC_GRP&startdatetime=20130
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=CB_REF_PRC_GRP&st
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=CB_CLR_DAM_GRP&startdatetime=20130919T07:00-0000&version=1CB_NODAL_LMT_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=CB_NODAL_LMT_GRP&resultformat=5&startdatetime=20130919T07:00-0000&version=1DAM_FLEX_RAMP_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_FLEX_RAMP_GRP&startdatetime=20130919T07:00-0000&version=1RTPD_FLEX_RAMP_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_FLEX_RAMP_GRP&startdatetime=20130919T07:00-0000&version=1RTD_FLEX_RAMP_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTD_FLEX_RAMP_GRP&startdatetime=20130919T07:00-0000&version=1DAM_MPM_LMP_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_MPM_LMP_GRP&startdatetime=20130919T07:00-0000&version=1HASP_MPM_LMP_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP_MPM_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=1RTPD_MPM_LMP_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_MPM_LMP_GRP&startdatetime=20130919T07:00-0000&enddatetime=20130919T08:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=DAM_MPM_SD_PRC_GRP&startdatetime=20130919T07:00-0000&version=1HASP_MPM_SD_PRC_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=HASP_MPM_SD_PRC_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTPD_MPM_SD_PRC_GRP&startdatetim
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CRR_BID_SEASONAL_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CRR_BID_SEASONAL_GRP&startdatetime=20180919T07:00-0000&version=2Note:Version2willincludeHEDGE_TYPEandTRANSACTION_TYPEelements
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CRR_BID_MTHLY_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CRR_BID_MTHLY_GRP&startdatetime=20180919T07:00-0000&version=2Note:Version2willincludeHEDGE_TYPEandTRANSACTION_TYPEelements
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=AGGR_OUTAGE_SCH_GRP&startdatetime=20130919T07:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CSP_OFFER_SET_ANNUAL_GRP&startdatetime=20170101T08:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CSP_OFFER_SET_MONTHLY_GRP&startdatetime=20170102T08:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=PUB_CSP_OFFER_SET_INTRAMONTHLY_GRP&startdatetime=20170110T08:00-0000&version=1
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=RTM_LAP_GRP&startdatetime=20171019T07:00-0000&version=6CRR_AGG_REV_ADJ_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=CRR_AGG_REV_ADJ_GRP&startdatetime=20181020T07:00-0000&version=7
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=ENE_RES_UPL_GRP&startdatetime=20190101T08:00-0000&version=8ENE_ZNL_UPL_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=ENE_ZNL_UPL_GRP&startdatetime=20190101T08:00-0000&version=8ENE_OIC_GRP
+http://oasis.caiso.com/oasisapi/GroupZip?groupid=ENE_OIC_GRP&startdatetime=20190101T08:00-0000&version=8

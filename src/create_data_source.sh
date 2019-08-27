@@ -47,6 +47,9 @@ done
 
 pushd ${REPO}
 git init
+git lfs install
+git lfs track "zip/*.zip"
+git lfs track "db/*.db"
 git add *
 git commit -m "initial commit" -m "auto-generated via create_data_source.sh"
 popd

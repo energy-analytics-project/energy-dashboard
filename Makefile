@@ -46,7 +46,7 @@ save:
 
 .PHONY: new
 new:  
-	src/create_data_source.sh "$(repo)" "$(owner)" "$(company)" "$(email)"
+	src/create_data_source.sh "$(repo)" "$(owner)" "$(company)" "$(email)" "$(url)"
 
 .PHONY: test
 test:  

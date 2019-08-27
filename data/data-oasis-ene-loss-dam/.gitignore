@@ -103,5 +103,14 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# don't add zip files
+# zip files are uploaded to DO spaces at https://eap.sfo2.digitaloceanspaces.com
 zip/*.zip
+
+# xml files are not included in repo as they can be extracted from the zip files
+xml/*.xml
+
+# db files to be both uploaded to DO spaces _and_ checked in to repo via git lfs.
+# this enables using all the databases from jupyter notebooks in github
+# NOT ENABLING THIS GIT IGNORE 
+# db/*.db 
+# NOT ENABLING THIS GIT IGNORE 
