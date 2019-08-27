@@ -170,3 +170,24 @@ Q: Couldn't this more easily be implemented as an 'airflow' and be hosted on GCP
 A: I want this to be free to use. Anyone should be able to perform data science.
 A: I want this to be easy and simple. Jupyter notebooks and git seem pretty simple to me.
 A: I don't want the hassle, cost, and complexity of having to maintain a bunch of airflows etc. 
+
+
+## TODO: move this random stuff to an architecture doc
+
+### Simple Strategies
+
+* Use Open Source Tech : Sqlite3 + Jupyter Notebooks + git
+* Use a simple database data structure
+* Use a simple metadata format
+
+The combination of these strategies means that you can easily add repos and generate
+reports using a combination of datasources.
+
+See:
+
+### Databases
+
+Each datasource generates a database from the downloaded XML Reports. The XML Reports are stuffed inside the .zip files.
+
+TODO: describe the normalization steps for converting the XML Report(s) to the database(s).
+TODO: deep dive on the entire pipeline architecture

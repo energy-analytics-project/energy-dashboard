@@ -24,8 +24,8 @@ ED can generate Jupyter Notebooks:
 
 ## Getting Started
 
-[ED is pre-alpha. Please join the email list to get status updates as this is all moving along
-quickly.](https://groups.google.com/d/forum/energy-analytics-project)
+ED is pre-alpha. Please join the [email list](https://groups.google.com/d/forum/energy-analytics-project) to get status updates as this is all moving along
+quickly.
 
 ### Tooling
 
