@@ -119,8 +119,8 @@
       path = data/data-oasis-ene-hrly-base-loss-dam-all
       url = https://github.com/energy-analytics-project/data-oasis-ene-hrly-base-loss-dam-all.git
 [submodule "data/data-oasis-ene-loss-dam"]
-      path = data/data-oasis-ene-loss-dam
-      url = https://github.com/energy-analytics-project/data-oasis-ene-loss-dam.git
+	path = data/data-oasis-ene-loss-dam
+	url = https://github.com/energy-analytics-project/data-oasis-ene-loss-dam.git
 [submodule "data/data-oasis-ene-mpm-dam"]
       path = data/data-oasis-ene-mpm-dam
       url = https://github.com/energy-analytics-project/data-oasis-ene-mpm-dam.git
