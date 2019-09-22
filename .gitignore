@@ -11,4 +11,4 @@ rel/example_project
 notebooks/.ipynb_checkpoints
 .temp-data-source-template/
 data-AAA-BBB-CCC/
-
+edc.log
