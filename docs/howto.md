@@ -3,29 +3,33 @@
 ## Create a Jupyter Notebook
 
 1. Download Data
-	* Select one or more of the available databases below
-	* Click the links with your browser, or use curl, or wget, whatever.
-1. Decompress the Database(s)
-	* the dataset locally on your machine
-	* Use any tooling that can decompress gzip files (gzip, pigz, etc.)
-1. Verify the database
-	* Use sqlite to run some queries on the database
-	* Noodle around a bit to get a feel for what you have and how it's structured
-		'sqlite DBNAME ".tables"'
-		'sqlite DBNAME "PRAGMA table_info(TABLE_NAME)"
-		'sqlite DBNAME "select count(*) from TABLE_NAME"
-		'sqlite DBNAME "select * from TABLE_NAME LIMIT 10"
-1. Create a Jupyter Notebook and wire in your data
-		import sqlite3
-		import pandas as pd
-		import matplotlib.pyplot as plt
-		from pandasql import sqldf
-		# Create the connection
-		cnx  = sqlite3.connect(r'../data/data-oasis-as-req-dam/db/caiso-oasis-as-req-dam.db')
-1. See the [example notebooks](../notebooks) for further details
-	* [OASIS AS_REQ (DAM)](../notebooks/oasis-as-req-dam.ipynb)
-	* [OASIS AS_REQ (DAM) and FUEL_PRC](../notebooks/oasis-as-req-dam-and-fuel-prc.ipynb)
-1. Science!
+  * Select one or more of the available databases below
+  * Click the links with your browser, or use curl, or wget, whatever.
+2. Decompress the Database(s)
+  * the dataset locally on your machine
+  * Use any tooling that can decompress gzip files (gzip, pigz, etc.)
+3. Verify the database
+  * Use sqlite to run some queries on the database
+  * Noodle around a bit to get a feel for what you have and how it's structured
+
+    'sqlite DBNAME ".tables"'
+    'sqlite DBNAME "PRAGMA table_info(TABLE_NAME)"
+    'sqlite DBNAME "select count(*) from TABLE_NAME"
+    'sqlite DBNAME "select * from TABLE_NAME LIMIT 10"
+
+4. Create a Jupyter Notebook and wire in your data
+
+    import sqlite3
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    from pandasql import sqldf
+    # Create the connection
+    cnx  = sqlite3.connect(r'../data/data-oasis-as-req-dam/db/caiso-oasis-as-req-dam.db')
+
+5. See the [example notebooks](../notebooks) for further details
+  * [OASIS AS_REQ (DAM)](../notebooks/oasis-as-req-dam.ipynb)
+  * [OASIS AS_REQ (DAM) and FUEL_PRC](../notebooks/oasis-as-req-dam-and-fuel-prc.ipynb)
+6. Science!
 
 ## Datasets
 
@@ -37,9 +41,9 @@ Note: there are about 50 more caiso oasis databases that are coming online, in a
 #### Dataset Documentation
 
 1. [CAISO OASIS Interface Specification](./caiso/OASIS-InterfaceSpecification_v5_1_8Clean_Independent2019Release.pdf)
-	* This document describes the available data feeds (called reports) and what the fields mean.
-	* Each CAISO OASIS report is prefixed by 'data-oasis-' here
-	* A report named FOO_BAZ_BAR would be named 'data-oasis-foo-baz-bar' here
+  * This document describes the available data feeds (called reports) and what the fields mean.
+  * Each CAISO OASIS report is prefixed by 'data-oasis-' here
+  * A report named FOO_BAZ_BAR would be named 'data-oasis-foo-baz-bar' here
 
 #### Available Datasets
 
