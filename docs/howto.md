@@ -11,28 +11,27 @@
 3. Verify the database
   * Use sqlite to run some queries on the database
   * Noodle around a bit to get a feel for what you have and how it's structured
-
-    'sqlite DBNAME ".tables"'
-    'sqlite DBNAME "PRAGMA table_info(TABLE_NAME)"
-    'sqlite DBNAME "select count(*) from TABLE_NAME"
-    'sqlite DBNAME "select * from TABLE_NAME LIMIT 10"
-
+```sqlite3
+sqlite DBNAME ".tables"
+sqlite DBNAME "PRAGMA table_info(TABLE_NAME)"
+sqlite DBNAME "select count(*) from TABLE_NAME"
+sqlite DBNAME "select * from TABLE_NAME LIMIT 10"
+```
 4. Create a Jupyter Notebook and wire in your data
-
-    import sqlite3
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    from pandasql import sqldf
-    # Create the connection
-    cnx  = sqlite3.connect(r'../data/data-oasis-as-req-dam/db/caiso-oasis-as-req-dam.db')
-
+```python3
+import sqlite3
+import pandas as pd
+import matplotlib.pyplot as plt
+from pandasql import sqldf
+# Create the connection
+cnx  = sqlite3.connect(r'../data/data-oasis-as-req-dam/db/caiso-oasis-as-req-dam.db')
+```
 5. See the [example notebooks](../notebooks) for further details
   * [OASIS AS_REQ (DAM)](../notebooks/oasis-as-req-dam.ipynb)
   * [OASIS AS_REQ (DAM) and FUEL_PRC](../notebooks/oasis-as-req-dam-and-fuel-prc.ipynb)
 6. Science!
 
 ## Datasets
-
 
 ### CAISO OASIS
 
