@@ -11,7 +11,7 @@ available data. See [background](./docs/background.md) for further details.
 
 ## Getting Started
 
-* See the [HowToGuide](./docs/howto.mf) for instructions
+* See the [HowToGuide](./docs/howto.md) for instructions
 * Join the [email list](https://groups.google.com/d/forum/energy-analytics-project) 
 
 ## License
