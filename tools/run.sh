@@ -1,17 +1,11 @@
 #! /bin/bash 
 
-LOG_LEVEL=INFO
+LOG_LEVEL=${LOG_LEVEL:-INFO}
 
+# keep downloads single threaded so as not to blow the caps at oasis
+edc feeds list | xargs -L 1 -I {} edc --log-level ${LOG_LEVEL} feed {} proc down
 
-# spread the processing over multiple processors using 'parallel'.
-#
-edc feeds list | parallel --max-procs 50% edc --log-level ${LOG_LEVEL} feed {} status
-edc feeds list | parallel --max-procs 50% edc --log-level ${LOG_LEVEL} feed {} proc unzip
-edc feeds list | parallel --max-procs 50% edc --log-level ${LOG_LEVEL} feed {} proc parse
-edc feeds list | parallel --max-procs 50% edc --log-level ${LOG_LEVEL} feed {} proc insert
-
-# the s3 buckets will complain if hit too hard, so don't run this in parallel, run
-# it sequentially...
-#
-#edc feeds list | xargs -L 1 -I {} edc --log-level ${LOG_LEVEL} feed {} s3archive --service wasabi
-#edc feeds list | xargs -L 1 -I {} edc --log-level ${LOG_LEVEL} feed {} s3archive --service digitalocean
+# spread the remaining processing over multiple processors using 'parallel'.
+edc feeds list | parallel --max-procs 90% "edc --log-level ${LOG_LEVEL} feed {} status"
+edc feeds list | parallel --max-procs 90% "edc --log-level ${LOG_LEVEL} feed {} proc all"
+edc feeds list | parallel --max-procs 90% "edc --log-level ${LOG_LEVEL} feed {} status"
