@@ -43,13 +43,13 @@ sudo apt install sqlite3 pigz
 #### Environment
 
 Create a conda environment, it can be named anything, I'll call
-this `edc-cli`. The environment will come with jupyter already
+this `energy-dashboard`. The environment will come with jupyter already
 installed...
 
 ```bash
 conda update conda
-conda create -n edc-cli python=3 numpy jupyter pandas pandasql
-conda activate edc-cli
+conda create -n energy-dashboard python=3 numpy jupyter pandas pandasql matplotlib
+conda activate energy-dashboard
 ```
 
 Ok, we are ready to play with data!
@@ -101,7 +101,7 @@ gunzip data-oasis-ene-wind-solar-summary_00.db.gz
 What tables does this report have?
 
 ```bash
-$ sqlite3 data-oasis-ene-wind-solar-summary_00.db ".tables"
+sqlite3 data-oasis-ene-wind-solar-summary_00.db ".tables"
 
 disclaimer_item  messagepayload   report_header
 error            oasisreport      report_item
@@ -163,7 +163,7 @@ The tables are joined by UUIDs. Both report_header and report_data are joined to
 In fact, if you want to see all the DDL for creating the tables, this will do it:
 
 ```bash
-$ sqlite3 data-oasis-ene-wind-solar-summary_00.db ".dump" | grep CREATE
+sqlite3 data-oasis-ene-wind-solar-summary_00.db ".dump" | grep CREATE
 CREATE TABLE oasisreport (id TEXT, PRIMARY KEY (id));
 CREATE TABLE messageheader (source TEXT, version TEXT, timedate TEXT, oasisreport_id TEXT, FOREIGN KEY (oasisreport_id) REFERENCES oasisreport(id), PRIMARY KEY (source, version, timedate));
 CREATE TABLE messagepayload (id TEXT, oasisreport_id TEXT, FOREIGN KEY (oasisreport_id) REFERENCES oasisreport(id), PRIMARY KEY (id));
@@ -185,14 +185,16 @@ I'll keep this super simple.
 * launch conda environment
 * launch jupyter notebook
 * create a new notebook
-* add some code to it
+* verify database
+* display data
+* display graphs
 
 ### Example
 
 #### Launch conda environment
 
 ```bash
-conda activate edc-cli
+conda activate energy-dashboard
 ```
 
 #### Create Notebook
@@ -222,6 +224,14 @@ So paste this link into your browser:
 
         file:///home/toddg/.local/share/jupyter/runtime/nbserver-16997-open.html
 
+#### Browser
+
+![Jupyter Notebook Browser](./assets/jupyter-00.png)
+
+#### Create a new Notebook (using Python3)
+
+![New_Jupyter Notebook](./assets/jupyter-01.png)
+
 
 #### Connect to Database
 
@@ -238,7 +248,7 @@ cnx  = sqlite3.connect(r'{{DBNAME}}')
 
 In our case, {{DBNAME}} is 'data-oasis-ene-wind-solar-summary_00.db'.
 
-Create a cell, and enter this into the first cell:
+Enter this into the first cell:
 
 ```python3
 import sqlite3
@@ -246,8 +256,53 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pandasql import sqldf
 # Create the connection
-cnx  = sqlite3.connect(r'{{data-oasis-ene-wind-solar-summary_00.db}}')
+cnx  = sqlite3.connect(r'data-oasis-ene-wind-solar-summary_00.db')
 ```
+
+![Jupyter Notebook With Sqlite3 Connection](./assets/jupyter-02.png)
+
+
+#### Verify Database
+
+Enter each of the following stanzas into a cell and verify the outputs match...
+
+
+```python3
+for row in cnx.execute("PRAGMA table_info([report_item]);"):
+    print(row)
+```
+
+```python3
+for row in cnx.execute("PRAGMA table_info([report_data]);"):
+    print(row)
+```
+
+```python3
+for row in cnx.execute("PRAGMA table_info([report_header]);"):
+    print(row)
+```
+
+Here's what that should look like:
+
+![Jupyter Notebook With Sqlite3 Tables](./assets/jupyter-03.png)
+
+
+Now verify that the data looks similar...
+
+```python3
+for row in cnx.execute("select * from report_item LIMIT 2;"):
+    print(row)
+```
+```python3
+for row in cnx.execute("select * from report_data LIMIT 2;"):
+    print(row)
+```
+```python3
+for row in cnx.execute("select * from report_data LIMIT 2;"):
+    print(row)
+```
+
+![Jupyter Notebook With Sqlite3 Data](./assets/jupyter-04.png)
 
 #### Display Data
 
