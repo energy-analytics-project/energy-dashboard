@@ -331,6 +331,8 @@ for title, group in df.groupby(['data_item']):
 ![Jupyter Notebook With Graphs](./assets/jupyter-06.png)
 
 
+This example can be found [here](../notebooks/first-notebook-for-energy-dashboard.ipynb).
+
 ## Share
 
 * Please include attribution in your reports telling where you sourced the data from.
