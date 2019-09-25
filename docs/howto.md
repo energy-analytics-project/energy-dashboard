@@ -306,17 +306,35 @@ for row in cnx.execute("select * from report_data LIMIT 2;"):
 
 #### Display Data
 
+Load a dataframe
+
+```python3
+df = pd.read_sql("select report_data.data_item, report_data.value, report_header.uom, report_header.report, report_header.mkt_type, report_data.interval_start_gmt, report_data.interval_end_gmt from report_header inner join report_data on report_header.report_item_id = report_data.report_item_id;", cnx)
+df[0:5]
+```
+
+![Jupyter Notebook With Dataframe](./assets/jupyter-05.png)
+
+
 #### Make Charts
+
+```python3
+for title, group in df.groupby(['report']):
+    group.plot.line(x='interval_start_gmt', y='value', title=title)
+```
+
+```python3
+for title, group in df.groupby(['data_item']):
+    group.plot.line(x='interval_start_gmt', y='value', title=title)
+```
+
+![Jupyter Notebook With Graphs](./assets/jupyter-06.png)
 
 
 ## Share
 
-
-#### Add the database
-#### Display some data
-#### Display charts
-
-
+* Please include attribution in your reports telling where you sourced the data from.
+* Please send a link to your PDF report so that we can include it in the list of reports.
 
 
 ## Further reading
