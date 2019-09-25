@@ -339,7 +339,14 @@ for title, group in df.groupby(['data_item']):
 
 ## Further reading
 
-### See the [example notebooks](../notebooks)
+### Old Sample Notebooks
+
+Neither of these notebooks renders anymore b/c the database schemas have changed from 
+the hand-coded schemas to auto-generated and normalized schemas. However, these are 
+a useful place to look for ideas as to how to create a notebook.
+
+TODO: update these and make real examples of them.
+
 * [OASIS AS_REQ (DAM)](../notebooks/oasis-as-req-dam.ipynb)
 * [OASIS AS_REQ (DAM) and FUEL_PRC](../notebooks/oasis-as-req-dam-and-fuel-prc.ipynb)
 
