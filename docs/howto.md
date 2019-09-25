@@ -52,9 +52,9 @@ conda create -n edc-cli python=3 numpy jupyter pandas pandasql
 conda activate edc-cli
 ```
 
-Ok, we are ready to create a notebook!
+Ok, we are ready to play with data!
 
-## Create a Jupyter Notebook
+## Play With Data!
 
 ### Overiew
 
@@ -75,19 +75,6 @@ sqlite3 {{DBNAME}} ".tables"
 sqlite3 {{DBNAME}} "PRAGMA table_info({{TABLE_NAME}})"
 sqlite3 {{DBNAME}} "select count(*) from {{TABLE_NAME}}"
 sqlite3 {{DBNAME}} "select * from {{TABLE_NAME}} LIMIT 10"
-```
-
-#### Create a Jupyter Notebook and wire in your data
-
-Here's what the code will look like...
-
-```python3
-import sqlite3
-import pandas as pd
-import matplotlib.pyplot as plt
-from pandasql import sqldf
-# Create the connection
-cnx  = sqlite3.connect(r'{{DBNAME}}')
 ```
 
 ### Example
@@ -188,7 +175,88 @@ CREATE TABLE disclaimer_item (disclaimer TEXT, rto_name TEXT, FOREIGN KEY (rto_n
 CREATE TABLE error (err_code INTEGER, err_desc TEXT, rto_name TEXT, FOREIGN KEY (rto_name) REFERENCES rto(name), PRIMARY KEY (err_code, err_desc));
 ```
 
-#### Create a notebook
+## Create a Jupyter Notebook
+
+### Overview
+
+There are lots of great tutorials out on the web for creating Jupyter Notebooks. So
+I'll keep this super simple.
+
+* launch conda environment
+* launch jupyter notebook
+* create a new notebook
+* add some code to it
+
+### Example
+
+#### Launch conda environment
+
+```bash
+conda activate edc-cli
+```
+
+#### Create Notebook
+
+Type this into your shell and press return...
+
+```bash
+jupyter-notebook 
+
+[I 17:49:14.356 NotebookApp] Writing notebook server cookie secret to /home/toddg/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 17:49:15.032 NotebookApp] Serving notebooks from local directory: /mnt/c/proj/energy-dashboard
+[I 17:49:15.032 NotebookApp] The Jupyter Notebook is running at:
+[I 17:49:15.032 NotebookApp] http://localhost:8888/?token=11130dc41cf890ba862414308e4045f0446b3e0d7d1458f9
+[I 17:49:15.032 NotebookApp]  or http://127.0.0.1:8888/?token=11130dc41cf890ba862414308e4045f0446b3e0d7d1458f9
+[I 17:49:15.032 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 17:49:15.045 NotebookApp] No web browser found: could not locate runnable browser.
+[C 17:49:15.046 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/toddg/.local/share/jupyter/runtime/nbserver-16997-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=11130dc41cf890ba862414308e4045f0446b3e0d7d1458f9
+     or http://127.0.0.1:8888/?token=11130dc41cf890ba862414308e4045f0446b3e0d7d1458f9
+```
+
+So paste this link into your browser:
+
+        file:///home/toddg/.local/share/jupyter/runtime/nbserver-16997-open.html
+
+
+#### Connect to Database
+
+Here's what the code will look like...
+
+```python3
+import sqlite3
+import pandas as pd
+import matplotlib.pyplot as plt
+from pandasql import sqldf
+# Create the connection
+cnx  = sqlite3.connect(r'{{DBNAME}}')
+```
+
+In our case, {{DBNAME}} is 'data-oasis-ene-wind-solar-summary_00.db'.
+
+Create a cell, and enter this into the first cell:
+
+```python3
+import sqlite3
+import pandas as pd
+import matplotlib.pyplot as plt
+from pandasql import sqldf
+# Create the connection
+cnx  = sqlite3.connect(r'{{data-oasis-ene-wind-solar-summary_00.db}}')
+```
+
+#### Display Data
+
+#### Make Charts
+
+
+## Share
+
+
 #### Add the database
 #### Display some data
 #### Display charts
