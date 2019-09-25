@@ -4,7 +4,7 @@
 
 ### Overview
 
-Here's the high level of what we are about to do...
+![CAISO Fuel Prices](https://raw.githubusercontent.com/energy-analytics-project/energy-dashboard/master/docs/caiso/caiso-oasis-avg-fuel-prices-and-fuel-prices-breakout.png.png "CAISO Fuel Prices")
 
 #### Install Dependencies
 * [conda](https://www.anaconda.com/distribution/#download-section)
