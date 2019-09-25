@@ -1,8 +1,6 @@
 # Datasets
 
-## Datasets
-
-### CAISO OASIS
+## CAISO OASIS
 
 * http://www.caiso.com
 * http://oasis.caiso.com
@@ -11,7 +9,7 @@
     * Each CAISO OASIS report is prefixed by 'data-oasis-' here
     * A report named FOO_BAZ_BAR would be named 'data-oasis-foo-baz-bar' here
 
-#### Available Datasets
+### Available Datasets
 
 Note: there are more than 60 CAISO oasis databases that are coming online shortly, in addition to those listed here.
 
