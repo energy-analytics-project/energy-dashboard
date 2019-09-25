@@ -4,19 +4,20 @@
 
 ### Overview
 
-1. Install Dependencies
-  * [conda](https://www.anaconda.com/distribution/#download-section)
-  * [sqlite3](https://sqlite.org/index.html)
-  * [jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
-  * [more jupyter](https://jupyter.org/install)
-  * [pigz](https://zlib.net/pigz/)
+Here's the high level of what we are about to do...
 
-1. Create a conda environment with 
-  * [tutorial](https://geohackweek.github.io/Introductory/01-conda-tutorial/)
+1. Install Dependencies
+  1. [conda](https://www.anaconda.com/distribution/#download-section)
+  1. [sqlite3](https://sqlite.org/index.html)
+  1. [jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
+  1. [more jupyter](https://jupyter.org/install)
+  1. [pigz](https://zlib.net/pigz/)
+1. Create a conda environment
+  1. [conda tutorial](https://geohackweek.github.io/Introductory/01-conda-tutorial/)
 
 ### Example
 
-These instructions are for ubuntu. See the link above for instructions specific
+Detailed instructions here for ubuntu. See the links above for instructions specific
 to your operating system.
 
 #### Install Dependencies
@@ -57,14 +58,14 @@ Ok, we are ready to create a notebook!
 ### Overiew
 
 1. Download Data
-  * Select one or more of the available databases below
-  * Click the links with your browser, or use curl, or wget, whatever.
+  1. Select one or more of the available databases below
+  1. Click the links with your browser, or use curl, or wget, whatever.
 1. Decompress the Database(s)
-  * the dataset locally on your machine
-  * Use any tooling that can decompress gzip files (gzip, pigz, etc.)
+  1. the dataset locally on your machine
+  1. Use any tooling that can decompress gzip files (gzip, pigz, etc.)
 1. Verify the database
-  * Use sqlite3 to run some queries on the database
-  * Noodle around a bit to get a feel for what you have and how it's structured
+  1. Use sqlite3 to run some queries on the database
+  1. Noodle around a bit to get a feel for what you have and how it's structured
 ```bash
 sqlite3 {{DBNAME}} ".tables"
 sqlite3 {{DBNAME}} "PRAGMA table_info({{TABLE_NAME}})"
@@ -118,7 +119,9 @@ What does each table look like?
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "PRAGMA table_info(report_item)"
 0|id|TEXT|0||1
 1|rto_name|TEXT|0||0
+```
 
+```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "PRAGMA table_info(report_data)"
 0|data_item|TEXT|0||1
 1|interval_end_gmt|TEXT|0||2
@@ -126,7 +129,9 @@ sqlite3 data-oasis-ene-wind-solar-summary_00.db "PRAGMA table_info(report_data)"
 3|value|INTEGER|0||4
 4|opr_date|TEXT|0||5
 5|report_item_id|TEXT|0||0
+```
 
+```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "PRAGMA table_info(report_header)"
 0|report|TEXT|0||1
 1|system|TEXT|0||2
@@ -144,15 +149,19 @@ What does some sample data look like?
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "select * from report_item limit 2"
 45a7b62a-987b-4ac7-a131-29aab2850b0e|CAISO
 8e47de63-00e1-446e-8586-825c6b6f001a|CAISO
+```
 
+```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "select * from report_data limit 2"
 DAM_FORECAST|2016-10-17T11:00:00-00:00|2016-10-17T10:00:00-00:00|2556|2016-10-17|45a7b62a-987b-4ac7-a131-29aab2850b0e
 DAM_FORECAST|2016-10-17T22:00:00-00:00|2016-10-17T21:00:00-00:00|9409|2016-10-17|45a7b62a-987b-4ac7-a131-29aab2850b0e
+```
 
+```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "select * from report_header limit 2"
 ENE_WIND_SOLAR_SUMMARY|OASIS|3600|MW|ENDING|PPT|DAM|45a7b62a-987b-4ac7-a131-29aab2850b0e
 ENE_WIND_SOLAR_SUMMARY|OASIS|300|MW|ENDING|PPT|RTD|61665051-e88b-4971-a3a5-6915bd2993e1
-``
+```
 
 The tables are joined by UUIDs. Both report_header and report_data are joined to their 'parent' table, report_item, by 'report_item_id'.
 
