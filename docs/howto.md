@@ -6,14 +6,15 @@
 
 Here's the high level of what we are about to do...
 
-1. Install Dependencies
-  1. [conda](https://www.anaconda.com/distribution/#download-section)
-  1. [sqlite3](https://sqlite.org/index.html)
-  1. [jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
-  1. [more jupyter](https://jupyter.org/install)
-  1. [pigz](https://zlib.net/pigz/)
-1. Create a conda environment
-  1. [conda tutorial](https://geohackweek.github.io/Introductory/01-conda-tutorial/)
+#### Install Dependencies
+* [conda](https://www.anaconda.com/distribution/#download-section)
+* [sqlite3](https://sqlite.org/index.html)
+* [jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
+* [more jupyter](https://jupyter.org/install)
+* [pigz](https://zlib.net/pigz/)
+
+####  Create a conda environment
+* [conda tutorial](https://geohackweek.github.io/Introductory/01-conda-tutorial/)
 
 ### Example
 
@@ -57,22 +58,29 @@ Ok, we are ready to create a notebook!
 
 ### Overiew
 
-1. Download Data
-  1. Select one or more of the available databases below
-  1. Click the links with your browser, or use curl, or wget, whatever.
-1. Decompress the Database(s)
-  1. the dataset locally on your machine
-  1. Use any tooling that can decompress gzip files (gzip, pigz, etc.)
-1. Verify the database
-  1. Use sqlite3 to run some queries on the database
-  1. Noodle around a bit to get a feel for what you have and how it's structured
+#### Download Data
+* Select one or more of the available databases below
+* Click the links with your browser, or use curl, or wget, whatever.
+
+#### Decompress the Database(s)
+* Decompress the dataset locally on your machine
+* Use any tooling that can decompress gzip files (gzip, pigz, etc.)
+
+#### Verify the database
+* Use sqlite3 to run some queries on the database
+* Noodle around a bit to get a feel for what you have and how it's structured
+
 ```bash
 sqlite3 {{DBNAME}} ".tables"
 sqlite3 {{DBNAME}} "PRAGMA table_info({{TABLE_NAME}})"
 sqlite3 {{DBNAME}} "select count(*) from {{TABLE_NAME}}"
 sqlite3 {{DBNAME}} "select * from {{TABLE_NAME}} LIMIT 10"
 ```
-1. Create a Jupyter Notebook and wire in your data
+
+#### Create a Jupyter Notebook and wire in your data
+
+Here's what the code will look like...
+
 ```python3
 import sqlite3
 import pandas as pd
@@ -189,10 +197,14 @@ CREATE TABLE error (err_code INTEGER, err_desc TEXT, rto_name TEXT, FOREIGN KEY 
 
 
 ## Further reading
-1. See the [example notebooks](../notebooks) for further details
-  * [OASIS AS_REQ (DAM)](../notebooks/oasis-as-req-dam.ipynb)
-  * [OASIS AS_REQ (DAM) and FUEL_PRC](../notebooks/oasis-as-req-dam-and-fuel-prc.ipynb)
-1. Science!
+
+### See the [example notebooks](../notebooks)
+* [OASIS AS_REQ (DAM)](../notebooks/oasis-as-req-dam.ipynb)
+* [OASIS AS_REQ (DAM) and FUEL_PRC](../notebooks/oasis-as-req-dam-and-fuel-prc.ipynb)
+
+## Science!
+
+Go forth and do good work!
 
 ## Datasets
 
@@ -202,10 +214,10 @@ Note: there are more than 60 caiso oasis databases that are coming online shortl
 
 #### Dataset Documentation
 
-1. [CAISO OASIS Interface Specification](./caiso/OASIS-InterfaceSpecification_v5_1_8Clean_Independent2019Release.pdf)
-  * This document describes the available data feeds (called reports) and what the fields mean.
-  * Each CAISO OASIS report is prefixed by 'data-oasis-' here
-  * A report named FOO_BAZ_BAR would be named 'data-oasis-foo-baz-bar' here
+##### [CAISO OASIS Interface Specification](./caiso/OASIS-InterfaceSpecification_v5_1_8Clean_Independent2019Release.pdf)
+* This document describes the available data feeds (called reports) and what the fields mean.
+* Each CAISO OASIS report is prefixed by 'data-oasis-' here
+* A report named FOO_BAZ_BAR would be named 'data-oasis-foo-baz-bar' here
 
 #### Available Datasets
 
