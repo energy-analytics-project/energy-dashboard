@@ -1,9 +1,9 @@
-# HowTo Get Started
+# How To Get Started
 
 ![CAISO Fuel Prices](https://raw.githubusercontent.com/energy-analytics-project/energy-dashboard/master/docs/caiso/caiso-oasis-avg-fuel-prices-and-fuel-prices-breakout.png.png "CAISO Fuel Prices")
 
 In each section below, I'll give an 'overview' that describes the section,
-followed by an 'example' with detailed insructions for that section. The
+followed by an 'example' with detailed instructions for that section. The
 'example' section will be based on GNU/Linux (Ubuntu distro). If you are
 using a different operating system, use these sections as a guide not a 
 recipe. (Pull Requests are welcome!)
@@ -14,12 +14,12 @@ recipe. (Pull Requests are welcome!)
 
 #### Install Dependencies
 
-This tutorial depends on the following tools: conda, sqlite3, jupyter
+This tutorial depends on the following tools: Conda/Anaconda, Sqlite3, Jupyter
 notebooks, and any tool that can decompress 'gzip' files. Conda/Anaconda is a
 great tool for managing python virtual environments. I started seriously using
 it this summer and I haven't looked back. It makes working with python virtual
 environments a breeze. Sqlite3 needs to be installed in order to access the
-databases. Jupyter Notebooks is installed into the conda/python3 virtual
+databases. Jupyter Notebooks is installed into the Conda/python3 virtual
 environment (instructions below). Pigz is really a nice-to-have. You can use
 any tooling you like that supports decompressing gzip files.
 
@@ -31,22 +31,22 @@ For reference, here are links to the install or home page for each tool:
 * [more jupyter](https://jupyter.org/install)
 * [pigz](https://zlib.net/pigz/)
 
-####  Create a conda environment
+####  Create a Conda environment
 
-When I get confused about conda, I go back to this tutorial for a refresher:
+When I get confused about Conda, I go back to this tutorial for a refresher:
 
-* [conda tutorial](https://geohackweek.github.io/Introductory/01-conda-tutorial/)
+* [Conda tutorial](https://geohackweek.github.io/Introductory/01-conda-tutorial/)
 
 ### Example
 
-Detailed installation instructions here for ubuntu. See the links above for
+Detailed installation instructions here for Ubuntu. See the links above for
 instructions specific to your operating system.
 
 #### Install Dependencies
 
-##### conda
+##### Conda
 
-This is cribbed straight from the conda page:
+This is cribbed straight from the Conda page:
 
 ```bash
 wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
@@ -54,9 +54,9 @@ chmod +x Anaconda3-2019.07-Linux-x86_64.sh
 ./Anaconda3-2019.07-Linux-x86_64.sh 
 ```
 
-##### sqlite3 and pigz
+##### Sqlite3 and Pigz
 
-Note: pigz isn't necessary, you can always use gzip/gunzip... but pigz uses
+Note: Pigz isn't necessary, you can always use gzip/gunzip... but Pigz uses
 all your cores, so why not?
 
 ```bash
@@ -65,11 +65,11 @@ sudo apt install sqlite3 pigz
 
 #### Environment
 
-Create a conda environment, it can be named anything, I'll call this
-`energy-dashboard`. We'll create the environment wih jupyter and other goodies
+Create a Conda environment, it can be named anything, I'll call this
+`energy-dashboard`. We'll create the environment with Jupyter and other goodies
 already installed... Note that if you find during the course of experimentation
 that you need something else, then you can always `pip install -U {{name of
-tool here}}` from within the conda environment.
+tool here}}` from within the Conda environment.
 
 ```bash
 conda update conda
@@ -77,11 +77,11 @@ conda create -n energy-dashboard python=3 numpy jupyter pandas pandasql matplotl
 conda activate energy-dashboard
 ```
 
-Ok, we are ready to play with data!
+OK, we are ready to play with data!
 
 ## Play With Data!
 
-### Overiew
+### Overview
 
 #### Download Data
 * Select one or more of the available databases below
@@ -92,7 +92,7 @@ Ok, we are ready to play with data!
 * Use any tooling that can decompress gzip files (gzip, pigz, etc.)
 
 #### Verify the database
-* Use sqlite3 from the console to run some queries on the database
+* Use Sqlite3 from the console to run some queries on the database
 * Noodle around a bit to get a feel for what you have and how the database is
   structured
 
@@ -131,7 +131,6 @@ all...
 ```bash
 pigz -d data-oasis-ene-wind-solar-summary_00.db.gz
 ```
-or use gzip
 
 Or go old-school and either use `gzip -d` or it's alias, `gunzip`:
 
@@ -251,8 +250,8 @@ the basics of connecting to the database and displaying data.
 
 #### Basic Steps
 
-* launch conda environment
-* launch jupyter notebook
+* launch Conda environment
+* launch Jupyter notebook
 * create a new notebook
 * verify database
 * display data
@@ -262,7 +261,7 @@ the basics of connecting to the database and displaying data.
 
 Warning, screenshots galore to follow...
 
-#### Launch conda environment
+#### Launch Conda environment
 
 You probably already have this launched, but if not, launch it:
 
@@ -272,7 +271,7 @@ conda activate energy-dashboard
 
 #### Create Notebook
 
-Since we installed `jupyter` into our conda environment, it's available
+Since we installed `jupyter` into our Conda environment, it's available
 at the console:
 
 ```bash
@@ -306,7 +305,7 @@ Note: your link will (obviously) be different. Copy the link that _your_ server 
 
 #### Browser
 
-Your browser should have opened up the navigation pane in jupyter notebooks and
+Your browser should have opened up the navigation pane in Jupyter notebooks and
 it should look a lot like this:
 
 ![Jupyter Notebook Browser](./assets/jupyter-00.png)
@@ -413,7 +412,7 @@ for row in cnx.execute("select * from report_data LIMIT 2;"):
 
 #### Display Data
 
-Load a dataframe. Note that I'm not using the sql 'limit' here, instead I'm using
+Load a dataframe. Note that I'm not using the SQL 'limit' here, instead I'm using
 python to slice the first few rows from the dataframe:
 
 ```python3
@@ -462,7 +461,7 @@ tooling installed, they can still benefit from your research. I'm saying this
 from experience. The first time I wanted to show someone how cool all this is
 (you can actually connect up _multiple_ sqlite3 databases, each in a git
 submodule, and join them all into a single panda dataframe, all rendered 'live'
-by github.com), either their website, their corporate firewal, or github.com...
+by github.com), either their website, their corporate firewall, or github.com...
 something failed. It wasn't my fault, but I looked bad. 
 
 I didn't have time to diagnose the issue at the time. And when I got back home,
@@ -476,7 +475,7 @@ internet connection, etc.
 
 As far as sharing your research... I'd share the notebook(s) and the
 database(s). You will want to have your database checked into some kind of
-repository or filesystem... definitely do not rely on the S3 buckets that I'm
+repository or file system... definitely do not rely on the S3 buckets that I'm
 exposing for anything but periodic updates. Like any service, I cannot
 guarantee their availability over time. That is to say, there is no SLA here.
 I have a pipeline in place to periodically pull down daily reports from the
@@ -506,43 +505,11 @@ Go forth and do good work!
 
 ## Datasets
 
-### CAISO OASIS
-
-Note: there are more than 60 caiso oasis databases that are coming online shortly, in addition to those listed here.
-
-#### Dataset Documentation
-
-##### [CAISO OASIS Interface Specification](./caiso/OASIS-InterfaceSpecification_v5_1_8Clean_Independent2019Release.pdf)
-* This document describes the available data feeds (called reports) and what the fields mean.
-* Each CAISO OASIS report is prefixed by 'data-oasis-' here
-* A report named FOO_BAZ_BAR would be named 'data-oasis-foo-baz-bar' here
-
-#### Available Datasets
-
-* [data-oasis-atl-ruc-zone-map](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-atl-ruc-zone-map/db/data-oasis-atl-ruc-zone-map_00.db.gz)
-* [data-oasis-cbd-nodal-grp-cnstr-prc](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-cbd-nodal-grp-cnstr-prc/db/data-oasis-cbd-nodal-grp-cnstr-prc_00.db.gz)
-* [data-oasis-as-mileage-calc-all](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-as-mileage-calc-all/db/data-oasis-as-mileage-calc-all_00.db.gz)
-* [data-oasis-prc-cd-rtm-nomogram-rctm-all](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-prc-cd-rtm-nomogram-rctm-all/db/data-oasis-prc-cd-rtm-nomogram-rctm-all_00.db.gz)
-* [data-oasis-atl-sp-tie](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-atl-sp-tie/db/data-oasis-atl-sp-tie_01.db.gz)
-* [data-oasis-atl-sp-tie](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-atl-sp-tie/db/data-oasis-atl-sp-tie_00.db.gz)
-* [data-oasis-ene-eim-transfer-limit-all-all](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-ene-eim-transfer-limit-all-all/db/data-oasis-ene-eim-transfer-limit-all-all_00.db.gz)
-* [data-oasis-prc-curr-hub-lmp](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-prc-curr-hub-lmp/db/data-oasis-prc-curr-hub-lmp_00.db.gz)
-* [data-oasis-prc-ds-ref](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-prc-ds-ref/db/data-oasis-prc-ds-ref_00.db.gz)
-* [data-oasis-as-results-dam](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-as-results-dam/db/data-oasis-as-results-dam_00.db.gz)
-* [data-oasis-cmmt-rmr-dam](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-cmmt-rmr-dam/db/data-oasis-cmmt-rmr-dam_00.db.gz)
-* [data-oasis-as-op-rsrv](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-as-op-rsrv/db/data-oasis-as-op-rsrv_00.db.gz)
-* [data-oasis-prc-mpm-cnstr-cmp-dam](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-prc-mpm-cnstr-cmp-dam/db/data-oasis-prc-mpm-cnstr-cmp-dam_00.db.gz)
-* [data-oasis-ene-baa-mkt-events-rtd-all](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-ene-baa-mkt-events-rtd-all/db/data-oasis-ene-baa-mkt-events-rtd-all_00.db.gz)
-* [data-oasis-ene-wind-solar-summary](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-ene-wind-solar-summary/db/data-oasis-ene-wind-solar-summary_00.db.gz)
-
-
+* [Full list of available datasets here](./datasets.md)
 
 ## Tooling
 
 For anyone that wants to understand the data pipeline, it's architecture and command line tooling...go here:
 
-* https://github.com/energy-analytics-project/energy-dashboard-cli
-* https://github.com/energy-analytics-project/energy-dashboard-lib
-
-
-# End
+* [energy-dashboard-cli](https://github.com/energy-analytics-project/energy-dashboard-cli)
+* [energy-dashboard-lib](https://github.com/energy-analytics-project/energy-dashboard-lib)
