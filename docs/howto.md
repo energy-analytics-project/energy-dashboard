@@ -1,12 +1,30 @@
-# HowTo
+# HowTo Get Started
+
+![CAISO Fuel Prices](https://raw.githubusercontent.com/energy-analytics-project/energy-dashboard/master/docs/caiso/caiso-oasis-avg-fuel-prices-and-fuel-prices-breakout.png.png "CAISO Fuel Prices")
+
+In each section below, I'll give an 'overview' that describes the section,
+followed by an 'example' with detailed insructions for that section. The
+'example' section will be based on GNU/Linux (Ubuntu distro). If you are
+using a different operating system, use these sections as a guide not a 
+recipe. (Pull Requests are welcome!)
 
 ## Prepare to Create a Jupyter Notebook
 
 ### Overview
 
-![CAISO Fuel Prices](https://raw.githubusercontent.com/energy-analytics-project/energy-dashboard/master/docs/caiso/caiso-oasis-avg-fuel-prices-and-fuel-prices-breakout.png.png "CAISO Fuel Prices")
-
 #### Install Dependencies
+
+This tutorial depends on the following tools: conda, sqlite3, jupyter
+notebooks, and any tool that can decompress 'gzip' files. Conda/Anaconda is a
+great tool for managing python virtual environments. I started seriously using
+it this summer and I haven't looked back. It makes working with python virtual
+environments a breeze. Sqlite3 needs to be installed in order to access the
+databases. Jupyter Notebooks is installed into the conda/python3 virtual
+environment (instructions below). Pigz is really a nice-to-have. You can use
+any tooling you like that supports decompressing gzip files.
+
+For reference, here are links to the install or home page for each tool:
+
 * [conda](https://www.anaconda.com/distribution/#download-section)
 * [sqlite3](https://sqlite.org/index.html)
 * [jupyter](https://jupyter.readthedocs.io/en/latest/install.html)
@@ -14,16 +32,21 @@
 * [pigz](https://zlib.net/pigz/)
 
 ####  Create a conda environment
+
+When I get confused about conda, I go back to this tutorial for a refresher:
+
 * [conda tutorial](https://geohackweek.github.io/Introductory/01-conda-tutorial/)
 
 ### Example
 
-Detailed instructions here for ubuntu. See the links above for instructions specific
-to your operating system.
+Detailed installation instructions here for ubuntu. See the links above for
+instructions specific to your operating system.
 
 #### Install Dependencies
 
 ##### conda
+
+This is cribbed straight from the conda page:
 
 ```bash
 wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
@@ -42,9 +65,11 @@ sudo apt install sqlite3 pigz
 
 #### Environment
 
-Create a conda environment, it can be named anything, I'll call
-this `energy-dashboard`. The environment will come with jupyter already
-installed...
+Create a conda environment, it can be named anything, I'll call this
+`energy-dashboard`. We'll create the environment wih jupyter and other goodies
+already installed... Note that if you find during the course of experimentation
+that you need something else, then you can always `pip install -U {{name of
+tool here}}` from within the conda environment.
 
 ```bash
 conda update conda
@@ -62,13 +87,18 @@ Ok, we are ready to play with data!
 * Select one or more of the available databases below
 * Click the links with your browser, or use curl, or wget, whatever.
 
-#### Decompress the Database(s)
+#### Decompress the Database
 * Decompress the dataset locally on your machine
 * Use any tooling that can decompress gzip files (gzip, pigz, etc.)
 
 #### Verify the database
-* Use sqlite3 to run some queries on the database
-* Noodle around a bit to get a feel for what you have and how it's structured
+* Use sqlite3 from the console to run some queries on the database
+* Noodle around a bit to get a feel for what you have and how the database is
+  structured
+
+Here's the template for the commands we'll be using below. Note that I'm using
+mustache template style variables here. This is just for stylistic clarity, the
+examples below will be copy-and-pastable...
 
 ```bash
 sqlite3 {{DBNAME}} ".tables"
@@ -79,7 +109,13 @@ sqlite3 {{DBNAME}} "select * from {{TABLE_NAME}} LIMIT 10"
 
 ### Example
 
+You can literally copy-and-paste the bash stanzas into a shell. No need to type
+all this out again.
+
 #### Download Data
+
+This is a small file, so rate limiting is probably not necessary. Still, it's
+better to be kind to the servers...
 
 ```bash
 curl --limit-rate 10M https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-ene-wind-solar-summary/db/data-oasis-ene-wind-solar-summary_00.db.gz -o data-oasis-ene-wind-solar-summary_00.db.gz
@@ -87,10 +123,17 @@ curl --limit-rate 10M https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/da
 
 #### Decompress the Database(s)
 
+Experience the full glory of a multi-core decompressor. Except that this is
+such a tiny file it will probably decompress instantly. But when you try this
+on one of the larger datasets, fire up `htop` and revel in the spectacle of it
+all...
+
 ```bash
 pigz -d data-oasis-ene-wind-solar-summary_00.db.gz
 ```
 or use gzip
+
+Or go old-school and either use `gzip -d` or it's alias, `gunzip`:
 
 ```bash
 gunzip data-oasis-ene-wind-solar-summary_00.db.gz
@@ -98,7 +141,11 @@ gunzip data-oasis-ene-wind-solar-summary_00.db.gz
 
 #### Verify the database
 
-What tables does this report have?
+Here's where the rubber meets the road. Theoretically, we have downloaded a
+compressed database, decompressed it, and it has data we can use. In theory. So
+let's vet the database before going any further...
+
+##### What tables does this report have?
 
 ```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db ".tables"
@@ -108,16 +155,26 @@ error            oasisreport      report_item
 messageheader    report_data      rto
 ```
 
-What does each table look like?
+Now that seems reasonable. In fact, all of the CAISO OASIS reports, which are
+in XML, have a similar structure (though not identical). The parser examines
+the XML structure, and creates a normalized schema for the data and then
+inserts the data into the database. One side-effect of how this pipeline is
+implemented is this: table relationships are mapped using UUIDS rather than
+Sqlite3 ROW IDS. This is a common practice in large databases that need to be
+sharded, etc., and it's just as valid for small datasets like these.
+
+##### What does each table look like?
 
 ```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "PRAGMA table_info(report_item)"
+
 0|id|TEXT|0||1
 1|rto_name|TEXT|0||0
 ```
 
 ```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "PRAGMA table_info(report_data)"
+
 0|data_item|TEXT|0||1
 1|interval_end_gmt|TEXT|0||2
 2|interval_start_gmt|TEXT|0||3
@@ -128,6 +185,7 @@ sqlite3 data-oasis-ene-wind-solar-summary_00.db "PRAGMA table_info(report_data)"
 
 ```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "PRAGMA table_info(report_header)"
+
 0|report|TEXT|0||1
 1|system|TEXT|0||2
 2|sec_per_interval|INTEGER|0||3
@@ -138,32 +196,40 @@ sqlite3 data-oasis-ene-wind-solar-summary_00.db "PRAGMA table_info(report_header
 7|report_item_id|TEXT|0||0
 ```
 
-What does some sample data look like?
+##### What does some sample data look like?
 
 ```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "select * from report_item limit 2"
+
 45a7b62a-987b-4ac7-a131-29aab2850b0e|CAISO
 8e47de63-00e1-446e-8586-825c6b6f001a|CAISO
 ```
 
 ```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "select * from report_data limit 2"
+
 DAM_FORECAST|2016-10-17T11:00:00-00:00|2016-10-17T10:00:00-00:00|2556|2016-10-17|45a7b62a-987b-4ac7-a131-29aab2850b0e
 DAM_FORECAST|2016-10-17T22:00:00-00:00|2016-10-17T21:00:00-00:00|9409|2016-10-17|45a7b62a-987b-4ac7-a131-29aab2850b0e
 ```
 
 ```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db "select * from report_header limit 2"
+
 ENE_WIND_SOLAR_SUMMARY|OASIS|3600|MW|ENDING|PPT|DAM|45a7b62a-987b-4ac7-a131-29aab2850b0e
 ENE_WIND_SOLAR_SUMMARY|OASIS|300|MW|ENDING|PPT|RTD|61665051-e88b-4971-a3a5-6915bd2993e1
 ```
 
-The tables are joined by UUIDs. Both report_header and report_data are joined to their 'parent' table, report_item, by 'report_item_id'.
+As mentioned above, the tables are joined by UUIDs. Both report_header and
+report_data are joined to their 'parent' table, report_item, by
+'report_item_id'.
 
-In fact, if you want to see all the DDL for creating the tables, this will do it:
+##### How were the tables created?
+
+If you want to see all the DDL for creating the tables, this will do it:
 
 ```bash
 sqlite3 data-oasis-ene-wind-solar-summary_00.db ".dump" | grep CREATE
+
 CREATE TABLE oasisreport (id TEXT, PRIMARY KEY (id));
 CREATE TABLE messageheader (source TEXT, version TEXT, timedate TEXT, oasisreport_id TEXT, FOREIGN KEY (oasisreport_id) REFERENCES oasisreport(id), PRIMARY KEY (source, version, timedate));
 CREATE TABLE messagepayload (id TEXT, oasisreport_id TEXT, FOREIGN KEY (oasisreport_id) REFERENCES oasisreport(id), PRIMARY KEY (id));
@@ -179,8 +245,11 @@ CREATE TABLE error (err_code INTEGER, err_desc TEXT, rto_name TEXT, FOREIGN KEY 
 
 ### Overview
 
-There are lots of great tutorials out on the web for creating Jupyter Notebooks. So
-I'll keep this super simple.
+There are lots of great tutorials out on the web for creating Jupyter
+Notebooks. So I'll keep this super simple and try to highlight just 
+the basics of connecting to the database and displaying data.
+
+#### Basic Steps
 
 * launch conda environment
 * launch jupyter notebook
@@ -191,7 +260,11 @@ I'll keep this super simple.
 
 ### Example
 
+Warning, screenshots galore to follow...
+
 #### Launch conda environment
+
+You probably already have this launched, but if not, launch it:
 
 ```bash
 conda activate energy-dashboard
@@ -199,11 +272,16 @@ conda activate energy-dashboard
 
 #### Create Notebook
 
-Type this into your shell and press return...
+Since we installed `jupyter` into our conda environment, it's available
+at the console:
 
 ```bash
 jupyter-notebook 
+```
 
+And here's the jupyter-notebook server starting up:
+
+```bash
 [I 17:49:14.356 NotebookApp] Writing notebook server cookie secret to /home/toddg/.local/share/jupyter/runtime/notebook_cookie_secret
 [I 17:49:15.032 NotebookApp] Serving notebooks from local directory: /mnt/c/proj/energy-dashboard
 [I 17:49:15.032 NotebookApp] The Jupyter Notebook is running at:
@@ -224,31 +302,28 @@ So paste this link into your browser:
 
         file:///home/toddg/.local/share/jupyter/runtime/nbserver-16997-open.html
 
+Note: your link will (obviously) be different. Copy the link that _your_ server showed when it started.
+
 #### Browser
+
+Your browser should have opened up the navigation pane in jupyter notebooks and
+it should look a lot like this:
 
 ![Jupyter Notebook Browser](./assets/jupyter-00.png)
 
 #### Create a new Notebook (using Python3)
+
+Now click on the button to create a new notebook and you should have a new
+notebook that looks a lot like this:
 
 ![New_Jupyter Notebook](./assets/jupyter-01.png)
 
 
 #### Connect to Database
 
-Here's what the code will look like...
-
-```python3
-import sqlite3
-import pandas as pd
-import matplotlib.pyplot as plt
-from pandasql import sqldf
-# Create the connection
-cnx  = sqlite3.connect(r'{{DBNAME}}')
-```
-
-In our case, {{DBNAME}} is 'data-oasis-ene-wind-solar-summary_00.db'.
-
-Enter this into the first cell:
+Assuming you started up `jupyter` from the _same directory_ as where you
+downloaded the database, 'data-oasis-ene-wind-solar-summary_00.db', then 
+this is what you'd enter into the first cell:
 
 ```python3
 import sqlite3
@@ -259,13 +334,43 @@ from pandasql import sqldf
 cnx  = sqlite3.connect(r'data-oasis-ene-wind-solar-summary_00.db')
 ```
 
+If your database is someplace else, then enter in either the relative path or the
+fully qualified path to the notebook in that last line:
+
+Example with mustache template for clarity:
+
+```python3
+cnx  = sqlite3.connect(r'{{FULL OR RELATIVE PATH TO YOUR DATABASE}}')
+```
+
+Example with relative path:
+
+```python3
+cnx  = sqlite3.connect(r'./example/of/a/relative/path/to/my/dababase/data-oasis-ene-wind-solar-summary_00.db')
+```
+
+Example with fully qualified path:
+
+```python3
+cnx  = sqlite3.connect(r'/user/doctorwho/example/of/a/fully/qualified/path/to/my/dababase/data-oasis-ene-wind-solar-summary_00.db')
+```
+
 ![Jupyter Notebook With Sqlite3 Connection](./assets/jupyter-02.png)
 
 
 #### Verify Database
 
-Enter each of the following stanzas into a cell and verify the outputs match...
+Enter each of the following stanzas into a cell and verify the outputs match by
+*running* or *executing* the cell(s). On my system, I can press
+CTRL-SHIFT-ENTER to run all the cells in a notebook. Check your install to see
+what's available for you. Note that I have installed an
+[extension](https://github.com/lambdalisue/jupyter-vim-binding) to make editing
+cells less painful. I have tried IntelliJ's jupyter notebook support and it
+looks really cool, but had enough glitches that I stopped using it (for now).
+YMMV.
 
+
+##### Verify the tables
 
 ```python3
 for row in cnx.execute("PRAGMA table_info([report_item]);"):
@@ -287,6 +392,8 @@ Here's what that should look like:
 ![Jupyter Notebook With Sqlite3 Tables](./assets/jupyter-03.png)
 
 
+##### Verify the data
+
 Now verify that the data looks similar...
 
 ```python3
@@ -306,7 +413,8 @@ for row in cnx.execute("select * from report_data LIMIT 2;"):
 
 #### Display Data
 
-Load a dataframe
+Load a dataframe. Note that I'm not using the sql 'limit' here, instead I'm using
+python to slice the first few rows from the dataframe:
 
 ```python3
 df = pd.read_sql("select report_data.data_item, report_data.value, report_header.uom, report_header.report, report_header.mkt_type, report_data.interval_start_gmt, report_data.interval_end_gmt from report_header inner join report_data on report_header.report_item_id = report_data.report_item_id;", cnx)
@@ -335,9 +443,49 @@ This example can be found [here](../notebooks/first-notebook-for-energy-dashboar
 
 ## Share
 
-* Please include attribution in your reports telling where you sourced the data from.
-* Please send a link to your PDF report so that we can include it in the list of reports.
+### Attribution
 
+* Please include attribution in your notebook(s) telling where you sourced the
+  data from.
+* Please send me a link to your notebook(s) and report PDFs so that we can
+  include it in the list of reports generated from this project.
+
+### Notebooks
+
+While it is true that some services such as github.com can live render jupyter
+notebooks directly from a Sqlite3 database (cool, right!), it's not something
+that I suggest. The service can fail to render at any time, leaving your
+customers with no idea what your report would look like. By all means, share
+the jupyter notebooks everywhere, but also include a PDF of the rendered report
+so that if something breaks, or someone you want to share with doesn't have the
+tooling installed, they can still benefit from your research. I'm saying this
+from experience. The first time I wanted to show someone how cool all this is
+(you can actually connect up _multiple_ sqlite3 databases, each in a git
+submodule, and join them all into a single panda dataframe, all rendered 'live'
+by github.com), either their website, their corporate firewal, or github.com...
+something failed. It wasn't my fault, but I looked bad. 
+
+I didn't have time to diagnose the issue at the time. And when I got back home,
+everything worked again. But that was from my machine, using my browser, on my
+internet connection, etc. 
+
+*Lesson learned: have a backup plan -> export your notebooks to PDF for distribution.*
+
+
+### Data
+
+As far as sharing your research... I'd share the notebook(s) and the
+database(s). You will want to have your database checked into some kind of
+repository or filesystem... definitely do not rely on the S3 buckets that I'm
+exposing for anything but periodic updates. Like any service, I cannot
+guarantee their availability over time. That is to say, there is no SLA here.
+I have a pipeline in place to periodically pull down daily reports from the
+data sources (currently CAISO OASIS). I'm not sure of the frequency that I'll
+be updating the databases replicated to the S3 buckets. That depends on how
+well the pipeline works as well as how well the availability of the data
+sources and the S3 services. There are a lot of moving parts here. 
+
+*Summary: Manage and share your own data as appropriate for your project.*
 
 ## Further reading
 
@@ -386,3 +534,15 @@ Note: there are more than 60 caiso oasis databases that are coming online shortl
 * [data-oasis-prc-mpm-cnstr-cmp-dam](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-prc-mpm-cnstr-cmp-dam/db/data-oasis-prc-mpm-cnstr-cmp-dam_00.db.gz)
 * [data-oasis-ene-baa-mkt-events-rtd-all](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-ene-baa-mkt-events-rtd-all/db/data-oasis-ene-baa-mkt-events-rtd-all_00.db.gz)
 * [data-oasis-ene-wind-solar-summary](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-ene-wind-solar-summary/db/data-oasis-ene-wind-solar-summary_00.db.gz)
+
+
+
+## Tooling
+
+For anyone that wants to understand the data pipeline, it's architecture and command line tooling...go here:
+
+* https://github.com/energy-analytics-project/energy-dashboard-cli
+* https://github.com/energy-analytics-project/energy-dashboard-lib
+
+
+# End
