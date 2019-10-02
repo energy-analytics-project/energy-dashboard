@@ -2,12 +2,21 @@
 
 ## CAISO OASIS
 
+CAISO datasets were sourced from:
 * http://www.caiso.com
 * http://oasis.caiso.com
+
+CAISO datasets are described here:
 * [CAISO OASIS Interface Specification](./caiso/OASIS-InterfaceSpecification_v5_1_8Clean_Independent2019Release.pdf)
     * Describes the available data feeds (called reports) and what the fields mean.
     * Each CAISO OASIS report is prefixed by 'data-oasis-' here
     * A report named FOO_BAZ_BAR would be named 'data-oasis-foo-baz-bar' here
+
+However, the Interface Specification is pretty terse. See more CAISO documents
+in this directory for the necessary context:
+
+[CAISO Docs](./caiso)
+
 
 ### Available Datasets
 
