@@ -472,6 +472,10 @@ internet connection, etc.
 
 *Lesson learned: have a backup plan -> export your notebooks to PDF for distribution.*
 
+Here are some example pdf's:
+
+* [oasis-as-req-dam](../notebooks/oasis-as-req-dam.pdf).
+* [oasis-as-req-dam-and-fuel-prc](../notebooks/oasis-as-req-dam-and-fuel-prc.pdf).
 
 ### Data
 
@@ -490,16 +494,10 @@ sources and the S3 services. There are a lot of moving parts here.
 
 ## Further reading
 
-### Old Sample Notebooks
+### Sample Notebooks
 
-Neither of these notebooks renders anymore b/c the database schemas have changed from 
-the hand-coded schemas to auto-generated and normalized schemas. However, these are 
-a useful place to look for ideas as to how to create a notebook.
-
-TODO: update these and make real examples of them.
-
-* [OASIS AS_REQ (DAM)](../notebooks/oasis-as-req-dam.ipynb)
-* [OASIS AS_REQ (DAM) and FUEL_PRC](../notebooks/oasis-as-req-dam-and-fuel-prc.ipynb)
+* [oasis-as-req-dam](../notebooks/oasis-as-req-dam.ipynb)
+* [oasis-as-req-dam-and-fuel-prc](../notebooks/oasis-as-req-dam-and-fuel-prc.ipynb)
 
 ## Science!
 
