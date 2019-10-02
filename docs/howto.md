@@ -54,13 +54,15 @@ chmod +x Anaconda3-2019.07-Linux-x86_64.sh
 ./Anaconda3-2019.07-Linux-x86_64.sh 
 ```
 
-##### Sqlite3 and Pigz
+##### Sqlite3 and Pigz and tex
 
 Note: Pigz isn't necessary, you can always use gzip/gunzip... but Pigz uses
 all your cores, so why not?
 
+Texlive is for xelatex, which is used to generate pdf's of reports.
+
 ```bash
-sudo apt install sqlite3 pigz
+sudo apt install sqlite3 pigz texlive-xetex
 ```
 
 #### Environment
