@@ -271,3 +271,6 @@
 [submodule "data/data-oasis-trns-usage-dam-all-all"]
       path = data/data-oasis-trns-usage-dam-all-all
       url = https://github.com/energy-analytics-project/data-oasis-trns-usage-dam-all-all.git
+[submodule "data/data-oasis-daily-renewables-output"]
+	path = data/data-oasis-daily-renewables-output
+	url = https://github.com/energy-analytics-project/data-oasis-daily-renewables-output.git
