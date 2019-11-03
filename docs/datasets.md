@@ -136,3 +136,7 @@ when it comes up.
 * [data-oasis-prc-mpm-lmp-dam](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-prc-mpm-lmp-dam/db/data-oasis-prc-mpm-lmp-dam_00.db.gz)
 * [data-oasis-ene-slrs-dam](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-ene-slrs-dam/db/data-oasis-ene-slrs-dam_00.db.gz)
 * [data-oasis-prc-rtpd-lmp](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-prc-rtpd-lmp/db/data-oasis-prc-rtpd-lmp_00.db.gz)
+
+## Content.Oasis
+
+* [data-oasis-daily-renewables-output](https://s3.us-west-1.wasabisys.com/eap/energy-dashboard/data/data-oasis-daily-renewables-output/db/data-oasis-daily-renewables-output_00.db.gz)
